@@ -33,12 +33,12 @@ if(env === 'development') {
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error...'));
 db.once('open', function callback() {
-  console.log('multivision db opened');
+  console.log('product manager db opened');
 });
 var messageSchema = mongoose.Schema({message: String});
 var Message = mongoose.model('Message', messageSchema);
 var mongoMessage= new Message({message: mongoMessage});
-console.log(mongoMessage.message);
+//console.log(mongoMessage.message);
 Message.findOne().exec(function(err, messageDoc) {
     mongoMessage = messageDoc.message;
 });
