@@ -1,8 +1,3 @@
-/**
- * Created by jmccommas on 11/23/14.
- */
-
-
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../../');
 
