@@ -38,6 +38,6 @@ function createDefaultUsers() {
       User.create({firstName:'Dan',lastName:'Wahlin',username:'dan', salt: salt, hashed_pwd: hash});
     }
   })
-};
+}s
 
 exports.createDefaultUsers = createDefaultUsers;
