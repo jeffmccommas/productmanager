@@ -31,6 +31,7 @@ angular.module('app').run(function ($rootScope, $location) {
         if (rejection === 'not authorized') {
             $location.path('/');
             console.log("HEROKU TEST");
+            console.log("HEROKU TEST 2");
         }
     })
 });
