@@ -1,15 +1,23 @@
 /**
  * Created by jmccommas on 11/23/14.
  */
-var auth = require('./auth');
-module.exports = function(app){
+var auth = require('./auth'),
+    users = require('../controllers/users'),
+    mongoose = require('mongoose'),
+    User = mongoose.model('User');
+
+module.exports = function(app) {
+
+    app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
+    app.post('/api/users', users.createUser);
+
     app.get('/partials/*', function(req, res) {
-        res.render('partials/' + req.params[0]);
+        res.render('../../public/app/' + req.params[0]);
     });
 
     app.post('/login', auth.authenticate);
 
-    app.post('/logout', function(req,res){
+    app.post('/logout', function(req, res) {
         req.logout();
         res.end();
     });
