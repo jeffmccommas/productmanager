@@ -10,4 +10,4 @@ angular.module('app').factory('mvCachedCourses', function(mvCourse) {
       return courseList;
     }
   }
-});
+})
