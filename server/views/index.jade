@@ -1,16 +1,33 @@
 extends ../includes/layout
 block main-content
-    .navbar.navbar-inverse.navbar-fixed-top
-        .container
-            .navbar-header
-                a.navbar-brand(href="/") Product Manager
-                    h6 -full sail university
-            .navbar-collapse.collapse
-                ul.nav.navbar-nav
-                    li
-                        a(href="/") Home
-                div(ng-include="'/partials/account/navbar-login'")
-    section.content
+    section
+        header
+            //
+               Header Navigation
+            .navbar-flat
+                nav.navbar.navbar-inverse.navbar-embossed.navbar-lg(role='navigation')
+                    .container
+                        .navbar-header
+                            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-01')
+                                span.sr-only Toggle navigation
+                            h1 Innovative Educational Solutions
+                            hr
+                            h2 product management software
+                        div(ng-include="'/partials/account/navbar-login'")
+                        //
+                           /.navbar-collapse
+
+    section.container
         div(ng-view)
-    footer.container.text-center
-        p &copy; 2014 Level Ten Studios, LLC.
+        footer
+          div.col-lg-12.footer
+            div.col-lg-6.footer-icons
+                i.fa.fa-facebook-square
+                i.fa.fa-google-plus-square
+                i.fa.fa-twitter-square
+                i.fa.fa-pinterest-square
+                i.fa.fa-linkedin-square
+            div.col-lg-6.footer-copy
+                p
+                    i.fa.fa-copyright
+                    | Innovative Educational Solutions

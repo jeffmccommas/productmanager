@@ -1,12 +1,66 @@
 body
-  padding-top 69px
+  position relative
+  background url("../images/pattern.png") repeat
 
-.navbar-header a.navbar-brand
-  margin-top -15px
-  margin-bottom -20px
-  h6
-    color #ccc
+.container
+  max-width 970px !important
+// header
+nav
+  &.navbar
+    &.navbar-inverse
+      &.navbar-embossed
+        &.navbar-lg
+          border-radius 0
 
+.navbar-embossed.navbar-inverse .navbar-nav .active > a, .navbar-embossed.navbar-inverse .navbar-nav .open > a
+  box-shadow none !important
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus
+  color #1abc9c !important
+  background none !important
+
+.navbar-header
+  background url("../images/gradhat.png") 30px 3px no-repeat
+
+.navbar-collapse
+  .navbar-nav
+    &.navbar-right
+      &:last-child
+        margin-right 0 !important
+
+.nav
+  & > li
+    a
+      &:active
+        position relative
+        display block
+        color red
+
+header
+  h1
+    font-family 'alleritalic', sans-serif
+    color #e1e1e1
+    font-size 25px
+    margin 20px 0 0 16px
+  h2
+    font-family 'aller_lightregular',sans-serif
+    font-style italic
+    color #e1e1e1
+    font-size 16px
+    line-height 0px
+    margin -10px 20px 0 0
+    padding 0 0 34px 0
+    float right
+  hr
+    margin-top 0
+    margin-bottom 20px
+    margin-left 20px
+    border 0
+    width 386px
+    border-top 1px solid #3498db
+  .graduate
+    position relative
+// footer
 footer
   padding-left 15px
   padding-right 15px
@@ -30,4 +84,49 @@ footer
 
 .toast-success
   background-color #13987e
+
+.footer
+  background #7f8c8d
+  border-radius 4px
+  margin 20px 0
+  padding 2px 0 0 10px
+  min-height 58px
+  p
+    color #e1e1e1
+    font-family alleritalic, sans-serif
+    font-size 25px
+    text-align center
+    margin 0
+    padding 0
+    border-top 0
+  i
+    &.fa
+      color #d7d7d7
+      font-size 30px
+      padding 0 2px 0 2px
+      transition transform ease-out 0.2s, color 0.3s
+      &:hover
+        color #ededed
+        font-size 30px
+        padding 0 2px 0 2px
+
+.col-lg-6
+  &.footer-icons
+    margin-top 14px
+  &.footer-copy
+    margin-top 8px
+
+// Admin styles
+.admin-welcome
+  h1
+    font-size 30px
+    text-transform uppercase
+    margin 0
+  p
+    color #777f88
+    font-family "Helvetica Neue Light", sans-serif
+    font-size 16px
+    padding 30px 0 0 0
+    text-align left
+
 
