@@ -1,32 +1,64 @@
 angular.module('app', ['ngResource', 'ngRoute']);
 
-angular.module('app').config(function($routeProvider, $locationProvider) {
+angular.module('app').config(function ($routeProvider, $locationProvider) {
     var routeRoleChecks = {
-        admin: {auth: function(mvAuth) {
-            return mvAuth.authorizeCurrentUserForRoute('admin')
-        }},
-        user: {auth: function(mvAuth) {
-            return mvAuth.authorizeAuthenticatedUserForRoute()
-        }}
+        admin: {
+            auth: function (mvAuth) {
+                return mvAuth.authorizeCurrentUserForRoute('admin')
+            }
+        },
+        user: {
+            auth: function (mvAuth) {
+                return mvAuth.authorizeAuthenticatedUserForRoute()
+            }
+        }
     };
 
     $locationProvider.html5Mode(true);
     $routeProvider
-        .when('/', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
-        .when('/admin/users', { templateUrl: '/partials/admin/user-list',
-            controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
+        .when('/', {
+            templateUrl: '/partials/main/main',
+            controller: 'mvMainCtrl'
         })
-        .when('/signup', { templateUrl: '/partials/account/signup',
+        .when('/admin/users', {
+            templateUrl: '/partials/admin/user-list',
+            controller: 'mvUserListCtrl',
+            resolve: routeRoleChecks.admin
+        })
+        .when('/signup', {
+            templateUrl: '/partials/account/signup',
             controller: 'mvSignupCtrl'
         })
-        .when('/profile', { templateUrl: '/partials/account/profile',
-            controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
+        .when('/profile', {
+            templateUrl: '/partials/account/profile',
+            controller: 'mvProfileCtrl',
+            resolve: routeRoleChecks.user
         })
-        .when('/courses', { templateUrl: '/partials/courses/course-list',
+        .when('/courses', {
+            templateUrl: '/partials/courses/course-list',
             controller: 'mvCourseListCtrl'
         })
-        .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
+        .when('/products', {
+            templateUrl: '/partials/admin/products/productListView',
+            controller: 'ProductListCtrl as vm'
+        })
+        .when('/courses/:id', {
+            templateUrl: '/partials/courses/course-details',
             controller: 'mvCourseDetailCtrl'
         })
+        .otherwise('/');
 
+}).run(function ($rootScope, $location, mvIdentity) {
+    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+        var requireAutantication = ["/partials/admin/products/productListView"];
+        if (requireAutantication.indexOf(next.templateUrl) >= 0) {
+            if (!mvIdentity.isAuthenticated()) {
+                if (next.templateUrl === "/partials/account/signup") {
+
+                } else {
+                    $location.path("/signup");
+                }
+            }
+        }
+    });
 });
