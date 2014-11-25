@@ -1,0 +1,41 @@
+//
+   Created by jmccommas on 11/25/14.
+
+.panel.panel-primary
+    .panel-heading(style='font-size:large')
+        | {{vm.title}}
+    .panel-body
+        .row
+            .col-md-6
+                .row
+                    .col-md-2 Name:
+                    .col-md-6 {{vm.product.productName}}
+                .row
+                    .col-md-2 Code:
+                    .col-md-6 {{vm.product.productCode }}
+                .row
+                    .col-md-2 Description:
+                    .col-md-6 {{vm.product.description }}
+                .row
+                    .col-md-2 Availability:
+                    .col-md-6 {{vm.product.releaseDate|date }}
+                .row
+                    .col-md-2 Cost:
+                    .col-md-6 {{vm.product.cost|currency }}
+                .row
+                    .col-md-2 Price:
+                    .col-md-6 {{ vm.product.price|currency }}
+                .row
+                    .col-md-2 Margin:
+                    .col-md-6 {{ vm.marginPercent | number:0}}%
+                .row
+                    .col-md-2 Tags:
+                    .col-md-6 {{vm.product.tagList}}
+            .col-md-6
+                img.center-block.img-responsive(style='width:200px;margin:2px;', ng-src='{{vm.product.imageUrl}}', title='{{vm.product.productName}}')
+    .panel-footer
+        a.btn.btn-default(ui-sref='productList', style='width:80px')
+            i.glyphicon.glyphicon-chevron-left
+            | Back
+        a.btn.btn-primary(ui-sref='productEdit.info({productId: vm.product.productId})', style='width:80px;margin-left:10px')
+            | Edit

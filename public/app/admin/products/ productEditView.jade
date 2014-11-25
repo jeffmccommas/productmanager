@@ -1,0 +1,15 @@
+//
+   Created by jmccommas on 11/25/14.
+
+.panel.panel-primary
+    .panel-heading(style='font-size:large')
+        | {{vm.title}}
+    .panel-body
+        .wizard
+            a(ui-sref='.info', ui-sref-active='active')
+                | Basic Information
+            a(ui-sref='.price', ui-sref-active='active')
+                | Price Details
+            a(ui-sref='.tags', ui-sref-active='active')
+                | Search Tags
+        div(ui-view='')

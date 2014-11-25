@@ -1,0 +1,26 @@
+//
+   Created by jmccommas on 11/25/14.
+
+form.form-horizontal(name='productTagsForm')
+    fieldset
+        legend Product Search Tags
+        div.form-group
+            label.col-md-2.control-label(for='inputSearchTags') Search Tags
+            div.col-md-8
+                input#inputSearchTags.form-control(type='text', placeholder='Product search keywords separated by commas', ng-model='vm.newTags')
+            div.col-md-1
+                button.btn.btn-default(type='button', title='Add the specified tags', ng-click='vm.addTags(vm.newTags)')
+                    | Add
+        div.row.col-md-8.col-md-offset-2
+            span(ng-repeat='tag in vm.product.tags | orderBy')
+                button.btn.btn-default(style='font-size:smaller;margin-bottom:12px', ng-click='vm.removeTag($index)')
+                    | {{tag}}
+                    span.glyphicon.glyphicon-remove
+        div.form-group
+            div.col-md-4.col-md-offset-2
+                span
+                    button.btn.btn-primary(style='width:80px;margin-right:10px', type='submit', ng-click='vm.submit(productTagsForm.$valid)')
+                        | Save
+                span
+                    button.btn.btn-default(style='width:70px', ng-click='vm.cancel()')
+                        | Cancel

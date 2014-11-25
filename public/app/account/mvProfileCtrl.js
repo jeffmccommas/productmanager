@@ -8,7 +8,7 @@ angular.module('app').controller('mvProfileCtrl', function($scope, mvAuth, mvIde
       username: $scope.email,
       firstName: $scope.fname,
       lastName: $scope.lname
-    }
+    };
     if($scope.password && $scope.password.length > 0) {
       newUserData.password = $scope.password;
     }
@@ -19,4 +19,4 @@ angular.module('app').controller('mvProfileCtrl', function($scope, mvAuth, mvIde
       mvNotifier.error(reason);
     })
   }
-})
+});

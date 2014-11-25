@@ -1,0 +1,31 @@
+//
+   Created by jmccommas on 11/25/14.
+
+.panel.panel-primary
+    .panel-heading(style='font-size:large')
+        | Product
+        | List
+    .panel-body
+        table.table
+            thead
+                tr
+                    td
+                        button.btn.btn-primary(type='button', ng-click='vm.toggleImage()')
+                            | {{vm.showImage ? "Hide" : "Show"}} Image
+                    td Product
+                    td Code
+                    td Available
+                    td Price
+            tbody
+                tr(ng-repeat='product in vm.products')
+                    td
+                        img(ng-if='vm.showImage', ng-src='{{product.imageUrl}}', style='width:50px;margin:2px', title='{{product.productName}}')
+                    td
+                        a(ui-sref='productDetail({productId: product.productId})')
+                            | {{ product.productName}}
+                    td {{ product.productCode }}
+                    td {{ product.releaseDate | date }}
+                    td {{ product.price | currency }}
+                    td
+                        a.btn.btn-primary(ui-sref='productEdit.info({productId: product.productId})')
+                            | Edit

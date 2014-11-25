@@ -1,6 +1,6 @@
 div.container.well
-    div.col-lg-6
-            form.form-horizontal(ng-hide='identity.isAuthenticated()')
+    div.col-lg-6(ng-controller='mvNavBarLoginCtrl')
+            form.form-horizontal(name='userForm')(role="form")
                 fieldset
                     legend Existing Users
                     .form-group
@@ -13,7 +13,7 @@ div.container.well
                             input#inputPassword.form-control(type='password', placeholder='Password', ng-model="password")
                     .form-group
                     .col-sm-offset-2.col-sm-10
-                        button.btn.btn-default(ng-click="signin(username, password)") Sign in
+                        button.btn.btn-primary(ng-click="signin(username, password)") Sign in
      div.col-lg-6
          form.form-horizontal(name='signupForm')
              fieldset
