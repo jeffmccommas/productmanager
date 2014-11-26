@@ -1,10 +1,1 @@
-<div class="row homepage">
-    <div class="page-header"><h1>Available Bookstore Items</h1></div>
-    <div ng-repeat="product in vm.products" class="col-lg-4 col-md-4 col-sm-4 col-xm-6">
-        <div class="col-md-5 animated animated fadeInUp delayp1"><a href="/product-details/{{product._id}}"><img
-                src="{{product.imageUrl}}" alt="{{product.productName}}" class="img-responsive"/></a></div>
-        <div class="col-md-7 product-blurb"><h3><a href="/product-details/{{product._id}}">{{product.productName}}</a>
-        </h3><h4><span class="available">available:</span><span> {{product.releaseDate | date:format}}</span></h4><h5>
-            <span>{{product.price | currency}}</span></h5></div>
-    </div>
-</div>
+<div class="row homepage"><div class="page-header"><h1>Available Bookstore Items</h1></div><div ng-repeat="product in vm.products" class="col-lg-4 col-md-4 col-sm-4 col-xm-6"><div class="col-md-5 animated animated fadeInUp delayp1"><a ui-sref="productDetail({id: product._id})"><img src="{{product.imageUrl}}" alt="{{product.productName}}" class="img-responsive"/></a></div><div class="col-md-7 product-blurb"><h3><a ui-sref="productDetail({id: product._id})">{{product.productName}}</a></h3><h4><span class="available">available:</span><span> {{product.releaseDate | date:format}}</span></h4><h5><span>{{product.price | currency}}</span></h5></div></div></div>

@@ -37,6 +37,10 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
+        .state("schoolInfo", {
+            url: "/school-information",
+            templateUrl: '/partials/products/school-info'
+        })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
     $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
         var requireAutantication = ["/partials/admin/products/productListView"];
