@@ -6,5 +6,18 @@
         h1 {{product.productName}}
     .col-md-5
         img.img-responsive(src='{{product.imageUrl}}', alt='{{product.productName}}')
-    .col-md-7 werwer
+    .col-md-7
+        h1 {{product.productName}}
+        h2 description:
+        p {{product.description}}
+        ul.list-unstyled
+            li
+                span code:
+                | {{product.productCode}}
+            li
+                span date available:
+                | {{product.releaseDate}}
+            li
+                span cost:
+                | {{product.price}}
 
