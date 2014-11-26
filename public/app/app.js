@@ -15,10 +15,10 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
     };
 
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
     $stateProvider
         .state("home", {
-            url: "/",
+            url: "/home",
             templateUrl: '/partials/main/main',
             controller: 'ProductListCtrl as vm'
         })
@@ -39,7 +39,7 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             controller: 'ProductListCtrl as vm'
         })
         .state("productDetail", {
-            url: "/products/:id",
+            url: "/products-detail/:id",
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
@@ -61,6 +61,10 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
         .state("productEdit.tags", {
             url: "/tags",
             templateUrl: "app/products/productEditTagsView.html"
+        })
+        .state("schoolInfo", {
+            url: "/school-information",
+            templateUrl: '/partials/info/school-info'
         })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
     $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
