@@ -39,7 +39,7 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             controller: 'ProductListCtrl as vm'
         })
         .state("productDetail", {
-            url: "/products-detail/:id",
+            url: "/products/:id",
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
@@ -47,8 +47,7 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             abstract: true,
             url: "/products/edit/:id",
             templateUrl: "/partials/admin/products/productEditView",
-            controller: "ProductEditCtrl as vm",
-
+            controller: "ProductEditCtrl as vm"
         })
         .state("productEdit.info", {
             url: "/info",
