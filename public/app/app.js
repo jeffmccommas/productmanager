@@ -15,10 +15,10 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
     };
 
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
     $stateProvider
         .state("home", {
-            url: "/",
+            url: "/home",
             templateUrl: '/partials/main/main',
             controller: 'ProductListCtrl as vm'
         })
@@ -27,19 +27,25 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             templateUrl: '/partials/account/signup',
             controller: 'mvSignupCtrl'
         })
+        .state("profile", {
+            url: "/profile",
+            templateUrl: '/partials/account/profile',
+            controller: 'mvProfileCtrl',
+            resolve: routeRoleChecks.user
+        })
         .state("productList", {
             url: "/products",
             templateUrl: '/partials/admin/products/productListView',
             controller: 'ProductListCtrl as vm'
         })
         .state("productDetail", {
-            url: "/products/:id",
+            url: "/products-detail/:id",
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
         .state("schoolInfo", {
             url: "/school-information",
-            templateUrl: '/partials/products/school-info'
+            templateUrl: '/partials/info/school-info'
         })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
     $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
