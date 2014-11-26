@@ -1,13 +1,13 @@
 angular.module('app').factory('mvCachedCourses', function(mvCourse) {
-  var courseList;
+  var productList;
 
   return {
     query: function() {
-      if(!courseList) {
-        courseList = mvCourse.query();
+      if(!productList) {
+          productList = product.query();
       }
 
-      return courseList;
+      return productList;
     }
   }
-})
+});

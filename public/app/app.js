@@ -18,7 +18,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/partials/main/main',
-            controller: 'mvMainCtrl'
+            controller: 'ProductListCtrl as vm'
         })
         .when('/admin/users', {
             templateUrl: '/partials/admin/user-list',
@@ -42,9 +42,9 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/admin/products/productListView',
             controller: 'ProductListCtrl as vm'
         })
-        .when('/courses/:id', {
-            templateUrl: '/partials/courses/course-details',
-            controller: 'mvCourseDetailCtrl'
+        .when('/product-details/:id', {
+            templateUrl: '/partials/products/product-details',
+            controller: 'mvProductDetailCtrl'
         })
         .otherwise('/');
 

@@ -3,7 +3,7 @@ body {
   background: url("../images/pattern.png") repeat;
 }
 .container {
-  max-width: 970px !important;
+  max-width: 1060px !important;
 }
 nav.navbar.navbar-inverse.navbar-embossed.navbar-lg {
   border-radius: 0;
@@ -76,7 +76,7 @@ footer p {
   margin-left: 10px;
 }
 .toast-top-right {
-  top: 70px;
+  top: 100px;
 }
 .toast-success {
   background-color: #13987e;

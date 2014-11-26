@@ -1,11 +1,12 @@
-.container
-    .row
-        .col-lg-6
-            img.img-responsive(src='images/admin-welcome.jpg', alt='Educational Product Management Solutions')
-        .col-lg-6.admin-welcome
+.row
+    .col-lg-6
+        img.img-responsive(src='images/admin-welcome.jpg', alt='Educational Product Management Solutions')
+    .col-lg-6.admin-welcome
             h1 Welcome to Store Demo!!
             p
                 | This is the default set up for your store and you can modify the look and feel to your store to match your school colors or logo.
 
+                | All products that are displayed here are for demonstrational purposes only. Any and all data is refreshed daily from out backup system.
 
-        //div(ng-include="'/partials/main/new-courses'")
+
+div(ng-include="'/partials/main/products'")
