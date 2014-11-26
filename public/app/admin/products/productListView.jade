@@ -21,11 +21,11 @@
                     td
                         img(ng-if='vm.showImage', ng-src='{{product.imageUrl}}', style='width:50px;margin:2px', title='{{product.productName}}')
                     td
-                        a(ui-sref='productDetail({productId: product.productId})')
+                        a(ui-sref='productDetail({id: product._id})')
                             | {{ product.productName}}
                     td {{ product.productCode }}
                     td {{ product.releaseDate | date }}
                     td {{ product.price | currency }}
                     td
-                        a.btn.btn-primary(ui-sref='productEdit.info({productId: product.productId})')
+                        a.btn.btn-primary(ui-sref='productEdit.info({id: product._id})')
                             | Edit

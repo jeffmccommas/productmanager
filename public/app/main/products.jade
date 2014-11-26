@@ -3,11 +3,11 @@
         h1 Available Bookstore Items
     .col-lg-4.col-md-4.col-sm-4.col-xm-6(ng-repeat='product in vm.products')
         .col-md-5.animated.animated.fadeInUp.delayp1
-            a(href='/product-details/{{product._id}}')
+            a(ui-sref='productDetail({id: product._id})')
                 img.img-responsive(src='{{product.imageUrl}}', alt='{{product.productName}}')
         .col-md-7.product-blurb
             h3
-                a(href='/product-details/{{product._id}}') {{product.productName}}
+                 a(ui-sref='productDetail({id: product._id})') {{product.productName}}
             h4
                 span.available available:
                 span  {{product.releaseDate | date:format}}

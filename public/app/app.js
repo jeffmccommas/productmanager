@@ -1,6 +1,6 @@
 angular.module('app', ['ngResource', 'ngRoute', 'ui.router']);
 
-angular.module('app').config(function ($routeProvider, $locationProvider, $urlRouterProvider) {
+angular.module('app').config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
     var routeRoleChecks = {
         admin: {
             auth: function (mvAuth) {
@@ -15,41 +15,30 @@ angular.module('app').config(function ($routeProvider, $locationProvider, $urlRo
     };
 
     $locationProvider.html5Mode(true);
-    $routeProvider
-        .when('/', {
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+        .state("home", {
+            url: "/",
             templateUrl: '/partials/main/main',
             controller: 'ProductListCtrl as vm'
         })
-        .when('/admin/users', {
-            templateUrl: '/partials/admin/user-list',
-            controller: 'mvUserListCtrl',
-            resolve: routeRoleChecks.admin
-        })
-        .when('/signup', {
+        .state("signup", {
+            url: "/signup",
             templateUrl: '/partials/account/signup',
             controller: 'mvSignupCtrl'
         })
-        .when('/profile', {
-            templateUrl: '/partials/account/profile',
-            controller: 'mvProfileCtrl',
-            resolve: routeRoleChecks.user
-        })
-        .when('/courses', {
-            templateUrl: '/partials/courses/course-list',
-            controller: 'mvCourseListCtrl'
-        })
-        .when('/products', {
+        .state("productList", {
+            url: "/products",
             templateUrl: '/partials/admin/products/productListView',
             controller: 'ProductListCtrl as vm'
         })
-        .when('/product-details/:id', {
+        .state("productDetail", {
+            url: "/products/:id",
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
-        .otherwise('/');
-
-}).run(function ($rootScope, $location, mvIdentity) {
-    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+}).run(function ($rootScope, $location, mvIdentity, $state) {
+    $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
         var requireAutantication = ["/partials/admin/products/productListView"];
         if (requireAutantication.indexOf(next.templateUrl) >= 0) {
             if (!mvIdentity.isAuthenticated()) {
