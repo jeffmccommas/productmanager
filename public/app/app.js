@@ -51,15 +51,15 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
         })
         .state("productEdit.info", {
             url: "/info",
-            templateUrl: "app/products/productEditInfoView.html"
+            templateUrl: "/partials/admin/products/productEditInfoView"
         })
         .state("productEdit.price", {
             url: "/price",
-            templateUrl: "app/products/productEditPriceView.html"
+            templateUrl: "/partials/admin/products/productEditPriceView"
         })
         .state("productEdit.tags", {
             url: "/tags",
-            templateUrl: "app/products/productEditTagsView.html"
+            templateUrl: "/partials/admin/products/productEditTagsView"
         })
         .state("schoolInfo", {
             url: "/school-information",
