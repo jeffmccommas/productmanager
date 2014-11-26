@@ -27,6 +27,12 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             templateUrl: '/partials/account/signup',
             controller: 'mvSignupCtrl'
         })
+        .state("profile", {
+            url: "/profile",
+            templateUrl: '/partials/account/profile',
+            controller: 'mvProfileCtrl',
+            resolve: routeRoleChecks.user
+        })
         .state("productList", {
             url: "/products",
             templateUrl: '/partials/admin/products/productListView',
@@ -37,8 +43,28 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
+        .state("productEdit", {
+            abstract: true,
+            url: "/products/edit/:id",
+            templateUrl: "/partials/admin/products/productEditView",
+            controller: "ProductEditCtrl as vm",
+
+        })
+        .state("productEdit.info", {
+            url: "/info",
+            templateUrl: "app/products/productEditInfoView.html"
+        })
+        .state("productEdit.price", {
+            url: "/price",
+            templateUrl: "app/products/productEditPriceView.html"
+        })
+        .state("productEdit.tags", {
+            url: "/tags",
+            templateUrl: "app/products/productEditTagsView.html"
+        })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
     $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
+        return;
         var requireAutantication = ["/partials/admin/products/productListView"];
         if (requireAutantication.indexOf(next.templateUrl) >= 0) {
             if (!mvIdentity.isAuthenticated()) {
