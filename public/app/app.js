@@ -1,6 +1,6 @@
-angular.module('app', ['ngResource', 'ngRoute']);
+angular.module('app', ['ngResource', 'ngRoute', 'ui.router']);
 
-angular.module('app').config(function ($routeProvider, $locationProvider) {
+angular.module('app').config(function ($routeProvider, $locationProvider, $urlRouterProvider) {
     var routeRoleChecks = {
         admin: {
             auth: function (mvAuth) {

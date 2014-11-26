@@ -1,0 +1,283 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'angularnpm',
+1 verbose cli   'install',
+1 verbose cli   'angular' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 warn package.json karma-chrome-launcher@0.1.5 No README data
+5 warn package.json npm-install@0.0.1 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'angularnpm', null ]
+8 verbose cache add name=undefined spec="angularnpm" args=["angularnpm",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'angularnpm',
+9 verbose parsed url   path: 'angularnpm',
+9 verbose parsed url   href: 'angularnpm' }
+10 verbose cache add [ 'install', null ]
+11 verbose cache add name=undefined spec="install" args=["install",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'install',
+12 verbose parsed url   path: 'install',
+12 verbose parsed url   href: 'install' }
+13 verbose cache add [ 'angular', null ]
+14 verbose cache add name=undefined spec="angular" args=["angular",null]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: 'angular',
+15 verbose parsed url   path: 'angular',
+15 verbose parsed url   href: 'angular' }
+16 silly lockFile 8432049d-angularnpm angularnpm
+17 verbose lock angularnpm /Users/jmccommas/.npm/8432049d-angularnpm.lock
+18 silly lockFile 89fb511f-install install
+19 verbose lock install /Users/jmccommas/.npm/89fb511f-install.lock
+20 silly lockFile 54e0c177-angular angular
+21 verbose lock angular /Users/jmccommas/.npm/54e0c177-angular.lock
+22 silly lockFile 8432049d-angularnpm angularnpm
+23 silly lockFile 8432049d-angularnpm angularnpm
+24 silly lockFile 89fb511f-install install
+25 silly lockFile 89fb511f-install install
+26 verbose addNamed [ 'angularnpm', '' ]
+27 verbose addNamed [ null, '*' ]
+28 silly lockFile 79fca27c-angularnpm angularnpm@
+29 verbose lock angularnpm@ /Users/jmccommas/.npm/79fca27c-angularnpm.lock
+30 silly lockFile 54e0c177-angular angular
+31 silly lockFile 54e0c177-angular angular
+32 verbose addNamed [ 'install', '' ]
+33 verbose addNamed [ null, '*' ]
+34 silly lockFile cadb329f-install install@
+35 verbose lock install@ /Users/jmccommas/.npm/cadb329f-install.lock
+36 verbose addNamed [ 'angular', '' ]
+37 verbose addNamed [ null, '*' ]
+38 silly lockFile fdbbf89d-angular angular@
+39 verbose lock angular@ /Users/jmccommas/.npm/fdbbf89d-angular.lock
+40 silly addNameRange { name: 'angularnpm', range: '*', hasData: false }
+41 silly addNameRange { name: 'install', range: '*', hasData: false }
+42 silly addNameRange { name: 'angular', range: '*', hasData: false }
+43 verbose request where is /angularnpm
+44 verbose request registry https://registry.npmjs.org/
+45 verbose request id 9614ed20cc2345c6
+46 verbose url raw /angularnpm
+47 verbose url resolving [ 'https://registry.npmjs.org/', './angularnpm' ]
+48 verbose url resolved https://registry.npmjs.org/angularnpm
+49 verbose request where is https://registry.npmjs.org/angularnpm
+50 info trying registry request attempt 1 at 12:28:30
+51 http GET https://registry.npmjs.org/angularnpm
+52 verbose request where is /install
+53 verbose request registry https://registry.npmjs.org/
+54 verbose url raw /install
+55 verbose url resolving [ 'https://registry.npmjs.org/', './install' ]
+56 verbose url resolved https://registry.npmjs.org/install
+57 verbose request where is https://registry.npmjs.org/install
+58 info trying registry request attempt 1 at 12:28:30
+59 http GET https://registry.npmjs.org/install
+60 verbose request where is /angular
+61 verbose request registry https://registry.npmjs.org/
+62 verbose url raw /angular
+63 verbose url resolving [ 'https://registry.npmjs.org/', './angular' ]
+64 verbose url resolved https://registry.npmjs.org/angular
+65 verbose request where is https://registry.npmjs.org/angular
+66 info trying registry request attempt 1 at 12:28:30
+67 http GET https://registry.npmjs.org/angular
+68 http 404 https://registry.npmjs.org/angularnpm
+69 verbose headers { date: 'Wed, 26 Nov 2014 17:23:51 GMT',
+69 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+69 verbose headers   'content-type': 'application/json',
+69 verbose headers   'cache-control': 'max-age=0',
+69 verbose headers   'content-length': '52',
+69 verbose headers   'accept-ranges': 'bytes',
+69 verbose headers   via: '1.1 varnish',
+69 verbose headers   age: '0',
+69 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+69 verbose headers   'x-cache': 'MISS',
+69 verbose headers   'x-cache-hits': '0',
+69 verbose headers   'x-timer': 'S1417022631.546007,VS0,VE75',
+69 verbose headers   'keep-alive': 'timeout=10, max=50',
+69 verbose headers   connection: 'Keep-Alive' }
+70 silly registry.get cb [ 404,
+70 silly registry.get   { date: 'Wed, 26 Nov 2014 17:23:51 GMT',
+70 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+70 silly registry.get     'content-type': 'application/json',
+70 silly registry.get     'cache-control': 'max-age=0',
+70 silly registry.get     'content-length': '52',
+70 silly registry.get     'accept-ranges': 'bytes',
+70 silly registry.get     via: '1.1 varnish',
+70 silly registry.get     age: '0',
+70 silly registry.get     'x-served-by': 'cache-atl6225-ATL',
+70 silly registry.get     'x-cache': 'MISS',
+70 silly registry.get     'x-cache-hits': '0',
+70 silly registry.get     'x-timer': 'S1417022631.546007,VS0,VE75',
+70 silly registry.get     'keep-alive': 'timeout=10, max=50',
+70 silly registry.get     connection: 'Keep-Alive' } ]
+71 silly lockFile 79fca27c-angularnpm angularnpm@
+72 silly lockFile 79fca27c-angularnpm angularnpm@
+73 http 200 https://registry.npmjs.org/angular
+74 silly registry.get cb [ 200,
+74 silly registry.get   { date: 'Wed, 26 Nov 2014 17:23:51 GMT',
+74 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+74 silly registry.get     etag: '"2PIWKJBL3H2JNI4PYELAOUUZH"',
+74 silly registry.get     'content-type': 'application/json',
+74 silly registry.get     'cache-control': 'max-age=60',
+74 silly registry.get     'content-length': '65846',
+74 silly registry.get     'accept-ranges': 'bytes',
+74 silly registry.get     via: '1.1 varnish',
+74 silly registry.get     age: '0',
+74 silly registry.get     'x-served-by': 'cache-atl6225-ATL',
+74 silly registry.get     'x-cache': 'HIT',
+74 silly registry.get     'x-cache-hits': '1',
+74 silly registry.get     'x-timer': 'S1417022631.551186,VS0,VE73',
+74 silly registry.get     vary: 'Accept',
+74 silly registry.get     'keep-alive': 'timeout=10, max=50',
+74 silly registry.get     connection: 'Keep-Alive' } ]
+75 silly addNameRange number 2 { name: 'angular', range: '*', hasData: true }
+76 silly addNameRange versions [ 'angular',
+76 silly addNameRange   [ '0.0.1',
+76 silly addNameRange     '0.0.1-1',
+76 silly addNameRange     '0.0.1-2',
+76 silly addNameRange     '0.0.2',
+76 silly addNameRange     '0.0.3',
+76 silly addNameRange     '0.0.4',
+76 silly addNameRange     '1.0.0',
+76 silly addNameRange     '1.0.1',
+76 silly addNameRange     '1.0.2',
+76 silly addNameRange     '1.0.3',
+76 silly addNameRange     '1.0.4',
+76 silly addNameRange     '1.0.5',
+76 silly addNameRange     '1.0.6',
+76 silly addNameRange     '1.0.7',
+76 silly addNameRange     '1.0.8',
+76 silly addNameRange     '1.1.0',
+76 silly addNameRange     '1.1.1',
+76 silly addNameRange     '1.1.2',
+76 silly addNameRange     '1.1.3',
+76 silly addNameRange     '1.1.4',
+76 silly addNameRange     '1.1.5',
+76 silly addNameRange     '1.2.0',
+76 silly addNameRange     '1.2.1',
+76 silly addNameRange     '1.2.2',
+76 silly addNameRange     '1.2.3',
+76 silly addNameRange     '1.2.4',
+76 silly addNameRange     '1.2.5',
+76 silly addNameRange     '1.2.6',
+76 silly addNameRange     '1.2.7',
+76 silly addNameRange     '1.2.8',
+76 silly addNameRange     '1.2.9',
+76 silly addNameRange     '1.2.10',
+76 silly addNameRange     '1.2.11',
+76 silly addNameRange     '1.2.12',
+76 silly addNameRange     '1.2.13',
+76 silly addNameRange     '1.2.14',
+76 silly addNameRange     '1.2.15',
+76 silly addNameRange     '1.2.16',
+76 silly addNameRange     '1.2.17',
+76 silly addNameRange     '1.2.18',
+76 silly addNameRange     '1.2.19',
+76 silly addNameRange     '1.2.20',
+76 silly addNameRange     '1.2.21',
+76 silly addNameRange     '1.2.22',
+76 silly addNameRange     '1.2.23',
+76 silly addNameRange     '1.3.0-rc.5',
+76 silly addNameRange     '1.3.0',
+76 silly addNameRange     '1.3.1',
+76 silly addNameRange     '1.3.2',
+76 silly addNameRange     '1.3.3',
+76 silly addNameRange     '1.3.4-build.3588',
+76 silly addNameRange     '1.2.27',
+76 silly addNameRange     '1.3.4' ] ]
+77 verbose addNamed [ 'angular', '1.3.4' ]
+78 verbose addNamed [ '1.3.4', '1.3.4' ]
+79 silly lockFile 0ebdd7a2-angular-1-3-4 angular@1.3.4
+80 verbose lock angular@1.3.4 /Users/jmccommas/.npm/0ebdd7a2-angular-1-3-4.lock
+81 silly lockFile 478512c1-js-org-angular-angular-1-3-4-tgz https://registry.npmjs.org/angular/-/angular-1.3.4.tgz
+82 verbose lock https://registry.npmjs.org/angular/-/angular-1.3.4.tgz /Users/jmccommas/.npm/478512c1-js-org-angular-angular-1-3-4-tgz.lock
+83 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular/-/angular-1.3.4.tgz',
+83 verbose addRemoteTarball   'db532cb4bae982a33c5bcb9db1e3a1b5e397edd5' ]
+84 info retry fetch attempt 1 at 12:28:31
+85 verbose fetch to= /var/folders/dt/03ggq3w13332nc86hrcn386nq80dxy/T/npm-81485-ZhV7UfLI/registry.npmjs.org/angular/-/angular-1.3.4.tgz
+86 http GET https://registry.npmjs.org/angular/-/angular-1.3.4.tgz
+87 http 200 https://registry.npmjs.org/install
+88 silly registry.get cb [ 200,
+88 silly registry.get   { date: 'Wed, 26 Nov 2014 17:23:51 GMT',
+88 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+88 silly registry.get     etag: '"8F8X8ZU9DTDNUIWOHNVIEZ80Z"',
+88 silly registry.get     'content-type': 'application/json',
+88 silly registry.get     'cache-control': 'max-age=60',
+88 silly registry.get     'content-length': '27648',
+88 silly registry.get     'accept-ranges': 'bytes',
+88 silly registry.get     via: '1.1 varnish',
+88 silly registry.get     age: '0',
+88 silly registry.get     'x-served-by': 'cache-atl6230-ATL',
+88 silly registry.get     'x-cache': 'HIT',
+88 silly registry.get     'x-cache-hits': '1',
+88 silly registry.get     'x-timer': 'S1417022631.541610,VS0,VE316',
+88 silly registry.get     vary: 'Accept',
+88 silly registry.get     'keep-alive': 'timeout=10, max=50',
+88 silly registry.get     connection: 'Keep-Alive' } ]
+89 silly addNameRange number 2 { name: 'install', range: '*', hasData: true }
+90 silly addNameRange versions [ 'install',
+90 silly addNameRange   [ '0.1.1', '0.1.2', '0.1.3', '0.1.4', '0.1.5', '0.1.6', '0.1.7' ] ]
+91 verbose addNamed [ 'install', '0.1.7' ]
+92 verbose addNamed [ '0.1.7', '0.1.7' ]
+93 silly lockFile b58c0e47-install-0-1-7 install@0.1.7
+94 verbose lock install@0.1.7 /Users/jmccommas/.npm/b58c0e47-install-0-1-7.lock
+95 silly lockFile d4a08d30-js-org-install-install-0-1-7-tgz https://registry.npmjs.org/install/-/install-0.1.7.tgz
+96 verbose lock https://registry.npmjs.org/install/-/install-0.1.7.tgz /Users/jmccommas/.npm/d4a08d30-js-org-install-install-0-1-7-tgz.lock
+97 verbose addRemoteTarball [ 'https://registry.npmjs.org/install/-/install-0.1.7.tgz',
+97 verbose addRemoteTarball   '30a90982c625506cb60c33f2a002db979a09b0ea' ]
+98 info retry fetch attempt 1 at 12:28:31
+99 verbose fetch to= /var/folders/dt/03ggq3w13332nc86hrcn386nq80dxy/T/npm-81485-ZhV7UfLI/registry.npmjs.org/install/-/install-0.1.7.tgz
+100 http GET https://registry.npmjs.org/install/-/install-0.1.7.tgz
+101 http 200 https://registry.npmjs.org/angular/-/angular-1.3.4.tgz
+102 http 200 https://registry.npmjs.org/install/-/install-0.1.7.tgz
+103 silly lockFile d4a08d30-js-org-install-install-0-1-7-tgz https://registry.npmjs.org/install/-/install-0.1.7.tgz
+104 silly lockFile d4a08d30-js-org-install-install-0-1-7-tgz https://registry.npmjs.org/install/-/install-0.1.7.tgz
+105 silly lockFile b58c0e47-install-0-1-7 install@0.1.7
+106 silly lockFile b58c0e47-install-0-1-7 install@0.1.7
+107 silly lockFile cadb329f-install install@
+108 silly lockFile cadb329f-install install@
+109 silly lockFile 478512c1-js-org-angular-angular-1-3-4-tgz https://registry.npmjs.org/angular/-/angular-1.3.4.tgz
+110 silly lockFile 478512c1-js-org-angular-angular-1-3-4-tgz https://registry.npmjs.org/angular/-/angular-1.3.4.tgz
+111 silly lockFile 0ebdd7a2-angular-1-3-4 angular@1.3.4
+112 silly lockFile 0ebdd7a2-angular-1-3-4 angular@1.3.4
+113 silly lockFile fdbbf89d-angular angular@
+114 silly lockFile fdbbf89d-angular angular@
+115 error 404 404 Not Found: angularnpm
+115 error 404
+115 error 404 'angularnpm' is not in the npm registry.
+115 error 404 You should bug the author to publish it
+115 error 404 It was specified as a dependency of 'ProductManager'
+115 error 404
+115 error 404 Note that you can also install from a
+115 error 404 tarball, folder, or http url, or git url.
+116 error System Darwin 13.4.0
+117 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "angularnpm" "install" "angular"
+118 error cwd /Users/jmccommas/Dropbox/FullSail/WFP/productmanager
+119 error node -v v0.10.33
+120 error npm -v 1.4.28
+121 error code E404
+122 verbose exit [ 1, true ]
