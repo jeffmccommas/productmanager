@@ -4,7 +4,7 @@ form.form-horizontal(name='productForm', novalidate='novalidate')
         .form-group(ng-class="{'has-error':productForm.inputProductName.$invalid && productForm.inputProductName.$dirty}")
             label.col-md-2.control-label(for='inputProductName') Product Name
             .col-md-4
-                input#inputProductName.form-control(name='inputProductName', id='inputProductName', type='text', placeholder='Product Name (required)', ng-model='vm.product.productName', required='required', ng-minlength='4', ng-maxlength='30')
+                input.form-control(name='inputProductName', id='inputProductName', type='text', placeholder='Product Name (required)', ng-model='vm.product.productName', required='required', ng-minlength='4', ng-maxlength='30')
             span.help-block.has-error
                 span(ng-show='productForm.inputProductName.$error.required') Product name is required.
                 span(ng-show='productForm.inputProductName.$error.minlength') Product name must be at least 4 characters in length.
@@ -14,20 +14,20 @@ form.form-horizontal(name='productForm', novalidate='novalidate')
             label.col-md-2.control-label(for='inputProductCode')
              | Product Code
             .col-md-4
-                input#inputProductCode.form-control(name='inputProductCode', ui-mask='AAA-**** (required)', ng-model='vm.product.productCode', required='required')
+                input.form-control(name='inputProductCode', id="inputProductCode" ui-mask='AAA-**** (required)', ng-model='vm.product.productCode', required='required')
             span.help-block.has-error(ng-show='productForm.inputProductCode.$invalid ') Product Code is required
         .form-group
             label.col-md-2.control-label(for='inputAvailabilityDate') Availability
             .col-md-4
                 .input-group
-                    input#inputAvailabilityDate.form-control(type='text', datepicker-popup='MMM dd, yyyy ', is-open='vm.opened', ng-model='vm.product.releaseDate')
+                    input.form-control(type='text', id="inputAvailabilityDate", datepicker-popup='MMM dd, yyyy ', is-open='vm.opened', ng-model='vm.product.releaseDate')
                     span.input-group-btn
                         button.btn.btn-default(ng-click='vm.open($event)')
                             i.fa.fa-calendar
         .form-group
             label.col-md-2.control-label(for='inputDescription') Description
             .col-md-10
-                textarea#inputDescription.form-control(placeholder='Description', rows='3', data-ng-model='vm.product.description')
+                textarea.form-control(placeholder='Description', id="inputDescription", rows='3', data-ng-model='vm.product.description')
         .form-group
             .col-md-4.col-md-offset-2
                 span

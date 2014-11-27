@@ -1,30 +1,30 @@
 div#navbar-collapse-01.collapse.navbar-collapse(ng-controller='mvNavBarLoginCtrl')
     ul.nav.navbar-nav.navbar-right(ng-show='identity.isAuthenticated()')
         li
-            a(href='/products') Products
+            a(ui-sref='productList') Products
         li
-            a(href='/school-information') Add Product
+            a(ui-sref='productEdit.info({productId:0})') Add Product
         li
-            a(href='/cost-analysis') Cost Analysis
+            a(ui-sref='cost-analysis') Cost Analysis
         li.dropdown
             a.dropdown-toggle(href='', data-toggle='dropdown')
                 | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
                 b.caret
              ul.dropdown-menu
                 li(ng-show="identity.currentUser.isAdmin()")
-                    a(href="/admin/users") User Admin
+                    a(ui-sref="admin/users") User Admin
                 li
-                    a(href="/profile") Profile
+                    a(ui-sref="profile") Profile
                 li
                     a(href="", ng-click="signout()") Sign Out
 
 
     ul.nav.navbar-nav.navbar-right(ng-hide='identity.isAuthenticated()')
         li
-            a(href='/home') Home
+            a(ui-sref='home') Home
         //li
         //    a(href='/products') Products
         li
-            a(href='/school-information') School Info
+            a(ui-sref='school-information') School Info
         li
-            a(href='/signup') Store Admin
+            a(ui-sref='signup') Store Admin

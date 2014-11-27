@@ -26,31 +26,38 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
     $urlRouterProvider.otherwise("/home");
     $stateProvider
         .state("home", {
-            url: "/home",
+            url: "home",
             templateUrl: '/partials/main/main',
             controller: 'ProductListCtrl as vm'
         })
+
         .state("signup", {
-            url: "/signup",
+            url: "signup",
             templateUrl: '/partials/account/signup',
             controller: 'mvSignupCtrl'
         })
         .state("profile", {
-            url: "/profile",
+            url: "profile",
             templateUrl: '/partials/account/profile',
             controller: 'mvProfileCtrl',
             resolve: routeRoleChecks.user
         })
+
+        // productList start
+
         .state("productList", {
-            url: "/products",
+            url: "products",
             templateUrl: '/partials/admin/products/productListView',
             controller: 'ProductListCtrl as vm'
         })
         .state("productDetail", {
-            url: "/products/:id",
+            url: "products/:id",
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
+
+        // productEdit start
+
         .state("productEdit", {
             abstract: true,
             url: "/products/edit/:id",
@@ -58,20 +65,46 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             controller: "ProductEditCtrl as vm"
         })
         .state("productEdit.info", {
-            url: "/info",
+            url: "info",
             templateUrl: "/partials/admin/products/productEditInfoView"
         })
         .state("productEdit.price", {
-            url: "/price",
+            url: "price",
             templateUrl: "/partials/admin/products/productEditPriceView"
         })
         .state("productEdit.tags", {
-            url: "/tags",
+            url: "tags",
             templateUrl: "/partials/admin/products/productEditTagsView"
         })
-        .state("schoolInfo", {
-            url: "/school-information",
+        .state("school-information", {
+            url: "school-information",
             templateUrl: '/partials/info/school-info'
+        })
+
+     // cost analytics start
+
+        .state("cost-analysis", {
+            url: "cost-analysis",
+            templateUrl:"/app/admin/prices/priceAnalyticsView.html",
+            controller: "PriceAnalyticsCtrl",
+            resolve: {
+               productResource: "productResource",
+
+                products: function (productResource) {
+                    return productResource.query(function(response) {
+                            // no code needed for success
+                        },
+                        function(response) {
+                            if (response.status == 404) {
+                                alert("Error accessing resource: " +
+                                response.config.method + " " +response.config.url);
+                            } else {
+                                alert(response.statusText);
+                            }
+                        }).$promise;
+
+                }
+            }
         })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
     $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
