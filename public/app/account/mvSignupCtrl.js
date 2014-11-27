@@ -1,4 +1,4 @@
-angular.module('app').controller('mvSignupCtrl', function($scope, mvUser, mvNotifier, $location, mvAuth) {
+angular.module('app').controller('mvSignupCtrl', function($scope, mvUser, mvNotifier, $location, mvAuth, $state) {
 
   $scope.signup = function() {
     var newUserData = {
@@ -13,6 +13,8 @@ angular.module('app').controller('mvSignupCtrl', function($scope, mvUser, mvNoti
       $location.path('/');
     }, function(reason) {
       mvNotifier.error(reason);
-    })
+    });
+
+      $state.go('/products')
   }
 });

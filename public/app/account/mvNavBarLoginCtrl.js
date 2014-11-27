@@ -1,10 +1,11 @@
-angular.module('app').controller('mvNavBarLoginCtrl', function ($scope, $http, mvIdentity, mvNotifier, mvAuth, $location) {
+angular.module('app').controller('mvNavBarLoginCtrl', function ($scope, $http, mvIdentity, mvNotifier, mvAuth, $location,$state) {
     $scope.identity = mvIdentity;
     $scope.signin = function (username, password) {
         mvAuth.authenticateUser(username, password).then(function (success) {
             if (success) {
                 mvNotifier.notify('You have successfully signed in!');
                 $location.path('/products');
+                //$state.go('/products')
             } else {
                 mvNotifier.error('Username/Password combination incorrect');
             }

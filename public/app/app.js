@@ -5,7 +5,8 @@ angular.module('app', [
     'ui.bootstrap',
     'ngAnimate',
     'ngMessages',
-    "ui.mask"
+    "ui.mask",
+    "angularCharts"
 ]);
 
 angular.module('app').config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -85,25 +86,25 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
 
         .state("cost-analysis", {
             url: "cost-analysis",
-            templateUrl:"/app/admin/prices/priceAnalyticsView.html",
+            templateUrl:"/partials/admin/prices/priceAnalyticsView.html",
             controller: "PriceAnalyticsCtrl",
             resolve: {
-               productResource: "productResource",
+               productResource: "productResource"
 
-                products: function (productResource) {
-                    return productResource.query(function(response) {
-                            // no code needed for success
-                        },
-                        function(response) {
-                            if (response.status == 404) {
-                                alert("Error accessing resource: " +
-                                response.config.method + " " +response.config.url);
-                            } else {
-                                alert(response.statusText);
-                            }
-                        }).$promise;
-
-                }
+                //products: function (productResource) {
+                //    return productResource.query(function(response) {
+                //            // no code needed for success
+                //        }
+                //        //function(response) {
+                //        //    if (response.status == 404) {
+                //        //        alert("Error accessing resource: " +
+                //        //        response.config.method + " " +response.config.url);
+                //        //    } else {
+                //        //        alert(response.statusText);
+                //        //    }
+                //        //}).$promise;
+                //
+                //}
             }
         })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
