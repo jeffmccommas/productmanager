@@ -58,7 +58,7 @@ function createDefaultProducts() {
             });
             Products.create({
                 "productId": 2,
-                "productName": "New and Used Text Books",
+                "productName": "New Text Books",
                 "productCode": "NAU-9188",
                 "releaseDate": "May 21, 2013",
                 "description": "Wouldn't you rather buy cheap college textbooks and have more money to ... textbooks for an Amazon Gift Card, whether you bought your books from us or not.",
