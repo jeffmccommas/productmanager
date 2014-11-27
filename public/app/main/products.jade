@@ -1,13 +1,18 @@
-div.row.homepage
-    div.page-header
-        h1 Available Bookstore Items
-    div.col-lg-4.col-md-4.col-sm-4.col-xm-6.animated.fadeInUp.delayp1(ng-repeat='product in vm.products')
-        div.col-md-5
+.row.homepage
+    .row.prodHeader
+        .col-lg-9
+            h1 Available Bookstore Items
+        .col-lg-3
+            .form-group
+                input.form-control(type='text', placeholder='Search', ng-model="searchProducts")
+        hr
+    .col-lg-4.col-md-4.col-sm-4.col-xm-6.animated.fadeInUp.delayp1(ng-repeat='product in vm.products | filter: searchProducts')
+        .col-md-5
             a(ui-sref='productDetail({id: product._id})')
                 img.img-responsive(src='{{product.imageUrl}}', alt='{{product.productName}}')
-        div.col-md-7.product-blurb
+        .col-md-7.product-blurb
             h3
-                 a(ui-sref='productDetail({id: product._id})') {{product.productName}}
+                a(ui-sref='productDetail({id: product._id})') {{product.productName}}
             h4
                 span.available available:
                 span  {{product.releaseDate | date:format}}
