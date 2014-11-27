@@ -202,6 +202,4 @@ function createDefaultProducts() {
             });
         }
     })
-}
-
-exports.createDefaultProducts = createDefaultProducts;
+}exports.createDefaultProducts = createDefaultProducts;
