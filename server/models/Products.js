@@ -116,7 +116,6 @@ function createDefaultProducts() {
                 "tags": ["computer", "laptop", "school supplies"],
                 "imageUrl": "images/prods/laptop.png"
             });
-
         }
     })
 }
