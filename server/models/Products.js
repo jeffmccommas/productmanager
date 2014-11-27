@@ -46,6 +46,42 @@ function createDefaultProducts() {
         if (collection.length === 0) {
 
             Products.create({
+                "productId": 4,
+                "productName": "Coloring Pencils",
+                "productCode": "CPM-0347",
+                "releaseDate": "October 21, 2014",
+                "description": "Premier Colored Pencils are the most popular colored pencils we sell. Each colored pencil features a thick, soft core made from brilliant, light-resistant pigments, to ensure smooth, rich laydown and color saturation.",
+                "cost": 12.00,
+                "price": 37.99,
+                "category": "electronics",
+                "tags": ["pencils", "writing pen", "school supplies"],
+                "imageUrl": "images/prods/Colouring_pencils.png"
+            });
+            Products.create({
+                "productId": 5,
+                "productName": "Teaching Easel",
+                "productCode": "TCE-5448",
+                "releaseDate": "May 24, 2012",
+                "description": "Teaching Easels are designed for teachers or individuals who will be presenting or demonstrating. They have a large sturdy area for which to attach paper or other work surface on to for demonstration purposes.",
+                "cost": 35.00,
+                "price": 92.99,
+                "category": "electronics",
+                "tags": ["easel", "teaching", "school supplies"],
+                "imageUrl": "images/prods/Easel-20110501.png"
+            });
+            Products.create({
+                "productId": 6,
+                "productName": "Computer Laptop",
+                "productCode": "CML-5548",
+                "releaseDate": "June 24, 2014",
+                "description": "Stream Web-based media on this Asus X551CA-BI30804C laptop's 15.6' high-definition display via the built-in wireless LAN, which lets you quickly access the Internet while youre on the go. The 500GB hard drive provides ample storage space.",
+                "cost": 87.00,
+                "price": 499.99,
+                "category": "electronics",
+                "tags": ["computer", "laptop", "school supplies"],
+                "imageUrl": "images/prods/laptop.png"
+            });
+            Products.create({
                 "productId": 7,
                 "productName": "Computer Monitor",
                 "productCode": "CPM-9548",
