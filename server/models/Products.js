@@ -44,7 +44,6 @@ var Products = mongoose.model('Products', productsSchema);
 function createDefaultProducts() {
     Products.find({}).exec(function (err, collection) {
         if (collection.length === 0) {
-
             Products.create({
                 "productId": 4,
                 "productName": "Coloring Pencils",
