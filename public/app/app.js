@@ -110,7 +110,6 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
     })
 }).run(function ($rootScope, $location, mvIdentity, $state) {
     $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
-        return;
         var requireAutantication = ["/partials/admin/products/productListView"];
         if (requireAutantication.indexOf(next.templateUrl) >= 0) {
             if (!mvIdentity.isAuthenticated()) {
