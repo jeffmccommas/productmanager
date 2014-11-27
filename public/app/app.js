@@ -28,18 +28,18 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
     $urlRouterProvider.otherwise("/home");
     $stateProvider
         .state("home", {
-            url: "home",
+            url: "/home",
             templateUrl: '/partials/main/main',
             controller: 'ProductListCtrl as vm'
         })
 
     .state("signup", {
-        url: "signup",
+        url: "/signup",
         templateUrl: '/partials/account/signup',
         controller: 'mvSignupCtrl'
     })
         .state("profile", {
-            url: "profile",
+            url: "/profile",
             templateUrl: '/partials/account/profile',
             controller: 'mvProfileCtrl',
             resolve: routeRoleChecks.user
@@ -48,12 +48,12 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
     // productList start
 
     .state("productList", {
-        url: "products",
+        url: "/products",
         templateUrl: '/partials/admin/products/productListView',
         controller: 'ProductListCtrl as vm'
     })
         .state("productDetail", {
-            url: "products/:id",
+            url: "/products/:id",
             templateUrl: '/partials/products/product-details',
             controller: 'mvProductDetailCtrl'
         })
@@ -79,14 +79,14 @@ angular.module('app').config(function ($stateProvider, $locationProvider, $urlRo
             templateUrl: "/partials/admin/products/productEditTagsView"
         })
         .state("school-information", {
-            url: "school-information",
+            url: "/school-information",
             templateUrl: '/partials/info/school-info'
         })
 
     // cost analytics start
 
     .state("cost-analysis", {
-        url: "cost-analysis",
+        url: "/cost-analysis",
         templateUrl: "/app/admin/prices/priceAnalyticsView.html",
         controller: "PriceAnalyticsCtrl",
         resolve: {

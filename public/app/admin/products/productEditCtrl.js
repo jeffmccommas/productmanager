@@ -14,18 +14,23 @@
 
     function ProductEditCtrl($state, productService, httprequest, $stateParams) {
         var vm = this;
-
+        var saveUrl = ($stateParams.id == "0" ? "/api/productcreate" : "/api/productupdate");
         var GetProductDetail = function () {
             httprequest.http_get('/api/products/' + $stateParams.id).then(function (response) {
                 vm.product = response;
                 if (vm.product && vm.product.productId) {
                     vm.title = "Edit: " + vm.product.productName;
-                } else {
-                    vm.title = "New Product";
                 }
             });
         };
-        GetProductDetail();
+
+        if ($stateParams.id !== "0") {
+            GetProductDetail();
+        } else {
+            vm.title = "New Product";
+        }
+
+
         vm.priceOption = "percent";
 
         vm.marginPercent = function () {
@@ -60,8 +65,9 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
-                httprequest.http_post('/api/productupdate', vm.product).then(function (data) {
+                httprequest.http_post(saveUrl, vm.product).then(function (data) {
                     toastr.success("Save Successful");
+                    $state.go('productList');
                 });
             } else {
                 alert("Please correct the validation errors first.");

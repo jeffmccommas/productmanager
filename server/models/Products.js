@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var productsSchema = mongoose.Schema({
     productId: {
         type: Number,
-        required: '{PATH} is required!'
+        // required: '{PATH} is required!'
     },
     productName: {
         type: String,
@@ -31,11 +31,12 @@ var productsSchema = mongoose.Schema({
     },
     category: {
         type: String,
-        required: '{PATH} is required!'
+        // required: '{PATH} is required!'
     },
     imageUrl: {
         type: String,
-        required: '{PATH} is required!'
+        default: "images/prods/pocket_pc.png"
+        // required: '{PATH} is required!'
     },
     tags: [String]
 });
@@ -53,7 +54,7 @@ function createDefaultProducts() {
                 "cost": 29.00,
                 "price": 100.95,
                 "category": "supplies",
-                "tags": ["blackboard", "board", "classroom","chalkboard"],
+                "tags": ["blackboard", "board", "classroom", "chalkboard"],
                 "imageUrl": "images/prods/magnetic-blackboard_0.jpg"
             });
             Products.create({
@@ -198,8 +199,9 @@ function createDefaultProducts() {
                 "price": 29.99,
                 "category": "electronics",
                 "tags": ["carry bag", "bag", "school supplies"],
-                "imageUrl": "images/prods/pocket_pc.png"
+                "imageUrl": "images / prods / pocket_pc.png"
             });
         }
     })
-}exports.createDefaultProducts = createDefaultProducts;
+}
+exports.createDefaultProducts = createDefaultProducts;

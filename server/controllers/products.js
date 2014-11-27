@@ -36,9 +36,11 @@ exports.updateProduct = function (req, res) {
 
 exports.createProduct = function (req, res) {
     var productData = req.body;
+    console.log(productData);
     Products.create(productData, function (err, document) {
+        console.log(err);
         if (!err) {
-            res.sendStatus(200, document);
+            res.send(document);
         } else {
             res.sendStatus(400);
         }
