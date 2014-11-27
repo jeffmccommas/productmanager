@@ -13,11 +13,11 @@
         ul.list-unstyled
             li
                 span code:
-                | {{product.productCode}}
+                |  {{product.productCode}}
             li
                 span date available:
-                | {{product.releaseDate}}
+                |  {{product.releaseDate | date:format}}
             li
                 span cost:
-                | {{product.price}}
+                |  {{product.price | currency}}
 

@@ -1,3 +1,21 @@
 //
    Created by jmccommas on 11/26/14.
-
+.row.prod-details
+    .col-lg-5
+        | <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11792.625862376513!2d-71.17909656667808!3d42.36050463876598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e378228cdfa6b7%3A0xe2bed939e38a6769!2sLiaison+International+Inc!5e0!3m2!1sen!2sus!4v1417041795596" width="400" height="350" frameborder="0" style="border:0"></iframe>
+    .col-lg-7
+        h1 university bookstore
+        ul.list-unstyled
+            li
+                span code:
+                | {{product.productCode}}
+            li
+                span date available:
+                | {{product.releaseDate | date:format}}
+            li
+                span cost:
+                | {{product.price | currency}}
+        p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus accusantium cupiditate deleniti dolore
+            | excepturi quo vero voluptate. Blanditiis commodi consequuntur deleniti dolorem eligendi eveniet, facere
+            | labore quod tempora tempore?

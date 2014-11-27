@@ -1,42 +1,53 @@
 div.container.well
     div.col-lg-6(ng-controller='mvNavBarLoginCtrl')
-            form.form-horizontal(name='userForm')(role="form")
-                fieldset
-                    legend Existing Users
-                    .form-group
-                        label.col-sm-2.control-label(for='inputEmail3') Email
-                        .col-sm-10
-                            input#inputEmai.form-control(type='email', placeholder='Email',ng-model="username")
-                    .form-group
-                        label.col-sm-2.control-label(for='inputPassword3') Password
-                        .col-sm-10
-                            input#inputPassword.form-control(type='password', placeholder='Password', ng-model="password")
-                    .form-group
-                    .col-sm-offset-2.col-sm-10
-                        button.btn.btn-primary(ng-click="signin(username, password)") Sign in
-     div.col-lg-6
-         form.form-horizontal(name='signupForm')
-             fieldset
-                 legend New User Information
-                 .form-group
-                     label.col-md-3.control-label(for='email') Email
-                     .col-md-9
-                         input.form-control(name='email', type='email', placeholder='Email', ng-model='email', required='required')
-                 .form-group
-                     label.col-md-3.control-label(for='password') Password
-                     .col-md-9
-                         input.form-control(name='password', type='password', placeholder='Password', ng-model='password', required='required')
-                 .form-group
-                     label.col-md-3.control-label(for='fname') First Name
-                     .col-md-9
-                         input.form-control(name='fname', type='text', placeholder='First Name', ng-model='fname', required='required')
-                 .form-group
-                     label.col-md-3.control-label(for='lname') Last Name
-                     .col-md-9
-                         input.form-control(name='lname', type='text', placeholder='Last Name', ng-model='lname', required='required')
-                 .form-group
-                     .col-md-9.col-md-offset-3
-                         .pull-right
-                             button.btn.btn-primary(ng-click='signup()', ng-disabled='signupForm.$invalid')
-                                 | Submit
-                             a.btn.btn-default(href='/') Cancel
+        form.form-horizontal(name='userForm', novalidate='novalidate', role="form")
+            fieldset
+                legend Existing Users
+                .form-group(ng-class="{'has-error':userForm.username.$invalid && userForm.username.$dirty}")
+                    label.col-sm-2.control-label(for='username') Email
+                    .col-sm-10
+                        input#username.form-control(type="email", name="username", placeholder="Email", ng-model="username", required="required")
+                        span.help-block.has-error
+                            div(ng-if='userForm.username.$invalid && userForm.username.$dirty', ng-messages='userForm.username.$error')
+                                span(ng-message='email') Please provide a valid email address.
+                                span(ng-message='required') required field.
+                .form-group(ng-class="{'has-error':userForm.password.$invalid && userForm.password.$dirty}")
+                    label.col-sm-2.control-label(for='password') Password
+                    .col-sm-10
+                        input#password.form-control(type='password', name='password', placeholder='Password', required, ng-model="password")
+                        span.help-block.has-error
+                            div(ng-if='userForm.password.$invalid && userForm.password.$dirty', ng-messages='userForm.password.$error')
+                                span(ng-message='required') Password is required
+                .form-group
+                .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary(ng-click="signin(username, password)", data-ng-disabled='userForm.$invalid') Sign in
+    div.col-lg-6
+        form.form-horizontal(name='signupForm')
+            fieldset
+                legend New User Information
+                .form-group(ng-class="{'has-error':signupForm.email.$invalid && signupForm.email.$dirty}")
+                    label.col-md-3.control-label(for='email') Email
+                    .col-md-9
+                        input.form-control(name='email', type='email', placeholder='Email', ng-model='email', required='required')
+                        span.help-block.has-error
+                            div(ng-if='signupForm.email.$invalid && signupForm.email.$dirty', ng-messages='signupForm.email.$error')
+                                span(ng-message='email') Please provide a valid email address.
+                                span(ng-message='required') required field.
+                .form-group
+                    label.col-md-3.control-label(for='password') Password
+                    .col-md-9
+                        input.form-control(name='password', type='password', placeholder='Password', ng-model='password', required='required')
+                .form-group
+                    label.col-md-3.control-label(for='fname') First Name
+                    .col-md-9
+                        input.form-control(name='fname', type='text', placeholder='First Name', ng-model='fname', required='required')
+                .form-group
+                    label.col-md-3.control-label(for='lname') Last Name
+                    .col-md-9
+                        input.form-control(name='lname', type='text', placeholder='Last Name', ng-model='lname', required='required')
+                .form-group
+                    .col-md-9.col-md-offset-3
+                        .pull-right
+                            button.btn.btn-primary(ng-click='signup()', ng-disabled='signupForm.$invalid')
+                                | Submit
+                            a.btn.btn-default(href='/') Cancel
