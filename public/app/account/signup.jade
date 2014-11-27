@@ -33,10 +33,13 @@ div.container.well
                             div(ng-if='signupForm.email.$invalid && signupForm.email.$dirty', ng-messages='signupForm.email.$error')
                                 span(ng-message='email') Please provide a valid email address.
                                 span(ng-message='required') required field.
-                .form-group
+                .form-group(ng-class="{'has-error':signupForm.password.$invalid && signupForm.password.$dirty}")
                     label.col-md-3.control-label(for='password') Password
                     .col-md-9
                         input.form-control(name='password', type='password', placeholder='Password', ng-model='password', required='required')
+                        span.help-block.has-error
+                            div(ng-if='signupForm.password.$invalid && signupForm.password.$dirty', ng-messages='signupForm.password.$error')
+                                span(ng-message='required') Password is required
                 .form-group
                     label.col-md-3.control-label(for='fname') First Name
                     .col-md-9

@@ -24,6 +24,7 @@ html {
     font-weight: normal;
     font-size: 24px;
     color: #2c3e50;
+    text-transform: uppercase;
 }
 .homepage img.img-responsive {
     -webkit-box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, .75);
@@ -88,7 +89,7 @@ html {
     font-family: "Lato", sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 18px;
     color: #2c3e50;
     text-transform: uppercase;
 }
@@ -98,21 +99,43 @@ html {
     font-weight: normal;
     text-transform: uppercase;
     font-style: italic;
-    font-size: 18px;
+    font-size: 16px;
     color: #777f88;
 }
 .prod-details li {
     font-family: "Helvetica Neue", Helvetica,sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 18px;
     color: #2c3e50;
+}
+.prod-details.school li {
+    font-family: "Helvetica Neue", Helvetica,sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #2c3e50;
+}
+.prod-details.school li span {
+    font-family: "Helvetica Neue", Helvetica,sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 16px;
+    color: #777f88;
+}
+.prod-details.school p {
+    font-family: "Helvetica Neue", Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #777f88;
 }
 .prod-details p {
     font-family: "Helvetica Neue", Helvetica,sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
     color: #777f88;
 }
 /****** admin wizard ********/
@@ -152,4 +175,140 @@ html {
 }
 .view-slide-in.ng-leave.ng-leave-active {
     opacity: 0;
+}
+
+/*************** buttons ******************/
+
+i.fa.fa-credit-card {
+    position: relative;
+    left: -30px;
+}
+
+button.btn.btn-primary {
+    padding: 8px 49px;
+}
+a.btn.btn-default {
+    padding: 8px 49px;
+    margin-left: 3px;
+}
+button.btn.btn-purchase{
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+.btn-purchase {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #f39c12;
+    padding: 7px 40px!important;
+}
+.btn-purchase:hover,
+.btn-purchase.hover,
+.btn-purchase:focus,
+.btn-purchase:active,
+.btn-purchase.active,
+.open > .dropdown-toggle.btn-purchase {
+    color: #fff;
+    background-color: #f6b517;
+    border-color: #f6b517;
+}
+.btn-purchase:active,
+.btn-purchase.active,
+.open > .dropdown-toggle.btn-purchase {
+    background: #f39c12;
+    border-color: #f39c12;
+}
+.btn-purchase.disabled,
+.btn-purchase[disabled],
+fieldset[disabled] .btn-purchase,
+.btn-purchase.disabled:hover,
+.btn-purchase[disabled]:hover,
+fieldset[disabled] .btn-purchase:hover,
+.btn-purchase.disabled.hover,
+.btn-purchase[disabled].hover,
+fieldset[disabled] .btn-purchase.hover,
+.btn-purchase.disabled:focus,
+.btn-purchase[disabled]:focus,
+fieldset[disabled] .btn-purchase:focus,
+.btn-purchase.disabled:active,
+.btn-purchase[disabled]:active,
+fieldset[disabled] .btn-purchase:active,
+.btn-purchase.disabled.active,
+.btn-purchase[disabled].active,
+fieldset[disabled] .btn-purchase.active {
+    background-color: #f39c12;
+    border-color: #f39c12;
+}
+/****************************************/
+
+i.fa.fa-hand-o-right {
+    position: relative;
+    left: -50px;
+}
+button.btn.btn-freetrial{
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+.btn-freetrial {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #e74c3c;
+    padding: 7px 66px!important;
+}
+.btn-freetrial:hover,
+.btn-freetrial.hover,
+.btn-freetrial:focus,
+.btn-freetrial:active,
+.btn-freetrial.active,
+.open > .dropdown-toggle.btn-freetrial {
+    color: #fff;
+    background-color: #ec7063;
+    border-color: #ec7063;
+}
+.btn-freetrial:active,
+.btn-freetrial.active,
+.open > .dropdown-toggle.btn-freetrial {
+    background: #c54133;
+    border-color: #c54133;
+}
+.btn-freetrial.disabled,
+.btn-freetrial[disabled],
+fieldset[disabled] .btn-freetrial,
+.btn-freetrial.disabled:hover,
+.btn-freetrial[disabled]:hover,
+fieldset[disabled] .btn-freetrial:hover,
+.btn-freetrial.disabled.hover,
+.btn-freetrial[disabled].hover,
+fieldset[disabled] .btn-freetrial.hover,
+.btn-freetrial.disabled:focus,
+.btn-freetrial[disabled]:focus,
+fieldset[disabled] .btn-freetrial:focus,
+.btn-freetrial.disabled:active,
+.btn-freetrial[disabled]:active,
+fieldset[disabled] .btn-freetrial:active,
+.btn-freetrial.disabled.active,
+.btn-freetrial[disabled].active,
+fieldset[disabled] .btn-freetrial.active {
+    background-color: #c54133;
+    border-color: #c54133;
+}
+
+.modal-footer {
+    padding: 0;
+    background-color: transparent !important;
+    border-top: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius:0;
+}
+.modal-title {
+    margin: 20px 0 0 20px !important;
+    font-size: 24px;
+    line-height: 19px !important;
+}
+.modal-header {
+    padding: 0 !important;
+    border-bottom: 0 solid #ebedef !important;
 }
