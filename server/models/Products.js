@@ -46,6 +46,42 @@ function createDefaultProducts() {
         if (collection.length === 0) {
 
             Products.create({
+                "productId": 7,
+                "productName": "Computer Monitor",
+                "productCode": "CPM-9548",
+                "releaseDate": "August 24, 2011",
+                "description": "With 1600 x 900 maximum resolution and a 5 ms response time, this Dell E2015HV MH7HK LCD monitor reproduces your media and other high-definition images in striking, rich detail. The VGA input and plug-and-play design make it easy to hook up your PC.",
+                "cost": 45.00,
+                "price": 199.99,
+                "category": "electronics",
+                "tags": ["computer", "monitor", "school supplies"],
+                "imageUrl": "images/prods/monitor_CRT.png"
+            });
+            Products.create({
+                "productId": 8,
+                "productName": "School Notebook",
+                "productCode": "SCN-6542",
+                "releaseDate": "September 24, 2014",
+                "description": "200gsm, 25% cotton cold pressed, watercolor paper is thread-bound to the Moleskine textured covers. An inner pocket holds notes and the elastic band on the short side keeps book securely closed.",
+                "cost": 2.00,
+                "price": 12.99,
+                "category": "electronics",
+                "tags": ["notebook", "books", "school supplies"],
+                "imageUrl": "images/prods/notebook.png"
+            });
+            Products.create({
+                "productId": 9,
+                "productName": "Pencils Pen Stand",
+                "productCode": "PPS-6242",
+                "releaseDate": "March 24, 2013",
+                "description": "Put your pens on a pedestal! This clear acrylic stand lets in plenty of light for maximum shimmer. The pens are visible from all angles, and the clear stand keeps the focus on your pens. Great for displaying at craft shows. Holds up to 7 pens in a variety of sizes.",
+                "cost": 1.00,
+                "price": 4.99,
+                "category": "electronics",
+                "tags": ["penstand", "pencil", "school supplies"],
+                "imageUrl": "images/prods/penstand.png"
+            });
+            Products.create({
                 "productId": 10,
                 "productName": "Pocket PC",
                 "productCode": "POC-6725",
