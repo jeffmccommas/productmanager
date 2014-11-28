@@ -64,7 +64,7 @@
             if (isValid) {
                 httprequest.http_post(saveUrl, vm.product).then(function (data) {
                     toastr.success("Save Successful");
-                    $state.go('productList');
+                    //$state.go('productList');
                 });
             } else {
                 alert("Please correct the validation errors first.");
