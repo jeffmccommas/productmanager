@@ -50,4 +50,12 @@
         });
     }
 
+    exports.deleteProductsById = function (req, res) {
+        Products.remove({
+            _id: req.params.id
+        }, 1).exec(function (err, prouct) {
+            res.sendStatus(200);
+        });
+    };
+
 }());

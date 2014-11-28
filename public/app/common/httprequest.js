@@ -39,6 +39,16 @@ angular.module('app').service('httprequest', ['$q', '$http',
         };
         this.http_put = function () {
             var deferred = $q.defer();
+            $http.put(url, requestdata, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+                .success(function (data, status, headers, config) {
+                    deferred.resolve(data);
+                    return deferred.promise;
+                })
+                .error(function (data, status, headers, config) {});
             return deferred.promise;
 
         };
