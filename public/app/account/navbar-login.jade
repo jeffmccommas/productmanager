@@ -3,22 +3,25 @@ div#navbar-collapse-01.collapse.navbar-collapse(ng-controller='mvNavBarLoginCtrl
         li
             a(ui-sref='productList') Products
         li
-            a(ui-sref='productEdit.info({id:0})') Add Product
+            a(ui-sref='productEdit.info({id:0})')
+                i.fa.fa-plus-circle
+                | Add Product
         li
-            a(ui-sref='cost-analysis') Cost Analysis
+            a(ui-sref='cost-analysis')
+                i.fa.fa-bar-chart
+                | Cost Analysis
         li.dropdown
             a.dropdown-toggle(href='', data-toggle='dropdown')
-                | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+                | {{identity.currentUser.firstName
+                | + " " + identity.currentUser.lastName}}
                 b.caret
-             ul.dropdown-menu
-                li(ng-show="identity.currentUser.isAdmin()")
-                    a(ui-sref="admin/users") User Admin
+            ul.dropdown-menu
+                li(ng-show='identity.currentUser.isAdmin()')
+                    a(ui-sref='admin/users') User Admin
                 li
-                    a(ui-sref="profile") Profile
+                    a(ui-sref='profile') Profile
                 li
-                    a(href="", ng-click="signout()") Sign Out
-
-
+                    a(href='', ng-click='signout()') Sign Out
     ul.nav.navbar-nav.navbar-right(ng-hide='identity.isAuthenticated()')
         li
             a(ui-sref='home') Home

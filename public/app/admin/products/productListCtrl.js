@@ -5,7 +5,7 @@
     "use strict";
     angular
         .module("app")
-        .controller("ProductListCtrl", ['httprequest', '$scope', '$modal', ProductListCtrl]);
+        .controller("ProductListCtrl", ['httprequest','$scope', '$modal', ProductListCtrl]);
 
     function ProductListCtrl(httprequest, $scope, $modal) {
         var vm = this;
@@ -28,31 +28,20 @@
             var to_delete_prod = vm.products[index];
             httprequest.http_delete('/api/product/' + to_delete_prod._id).then(function (response) {
                 vm.products.splice(index, 1);
+                $modalInstance.close();
                 toastr.error("Product Deleted");
             });
         };
 
-        //$scope.ok = function () {
-        //    $modalInstance.close();
-        //};
-
         $scope.cancel = function () {
-            $modal.dismiss('cancel');
+            $modalInstance.dismiss('cancel');
         };
 
-        $scope.open = function (index) {
+        $scope.open = function (size) {
+
             var modalInstance = $modal.open({
                 templateUrl: 'app/admin/products/deleteModal.html',
-                controller: function ($scope, $modalInstance) {
-                    $scope.confirmDelete = function (status) {
-                        $modalInstance.close(status);
-                    };
-                }
-            });
-            modalInstance.result.then(function (isDeleted) {
-                if (isDeleted) {
-                    vm.delete(index);
-                }
+                controller: 'ModalInstanceCtrl'
             });
         };
     }
