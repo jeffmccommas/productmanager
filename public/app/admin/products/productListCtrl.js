@@ -5,9 +5,9 @@
     "use strict";
     angular
         .module("app")
-        .controller("ProductListCtrl", ['httprequest','$scope', '$modal', ProductListCtrl]);
+        .controller("ProductListCtrl", ['httprequest','$scope', '$modal','$modalInstance', ProductListCtrl]);
 
-    function ProductListCtrl(httprequest,$scope, $modal) {
+    function ProductListCtrl(httprequest,$scope, $modal, $modalInstance) {
         var vm = this;
 
         var GetAllProducts = function () {
