@@ -1,27 +1,31 @@
 div#navbar-collapse-01.collapse.navbar-collapse(ng-controller='mvNavBarLoginCtrl')
-    ul.nav.navbar-nav.navbar-right(ng-show='identity.isAuthenticated()')
-        li
-            a(ui-sref='productList') Products
-        li
-            a(ui-sref='productEdit.info({id:0})')
-                i.fa.fa-plus-circle
-                | Add Product
-        li
-            a(ui-sref='cost-analysis')
-                i.fa.fa-bar-chart
-                | Cost Analysis
-        li.dropdown
-            a.dropdown-toggle(href='', data-toggle='dropdown')
-                | {{identity.currentUser.firstName
-                | + " " + identity.currentUser.lastName}}
-                b.caret
-            ul.dropdown-menu
-                li(ng-show='identity.currentUser.isAdmin()')
-                    a(ui-sref='admin/users') User Admin
-                li
-                    a(ui-sref='profile') Profile
-                li
-                    a(href='', ng-click='signout()') Sign Out
+    div(ng-show='identity.isAuthenticated()')
+        ul.nav.navbar-nav.navbar-right
+            li
+                a(ui-sref='productList')  Products
+            li
+                a(ui-sref='productEdit.info({id:0})')
+                    i.fa.fa-plus-circle
+                    |   Add Product
+            li
+                a(ui-sref='cost-analysis')
+                    i.fa.fa-bar-chart
+                    |   Cost Analysis
+        div.userClass
+            ul.navbar-nav.navbar-right
+                li.dropdown
+                    a.dropdown-toggle(href='', data-toggle='dropdown')
+                        | Welcome
+                        | {{identity.currentUser.firstName
+                        | + " " + identity.currentUser.lastName}}
+                        b.caret
+                    ul.dropdown-menu
+                        li(ng-show='identity.currentUser.isAdmin()')
+                            a(ui-sref='admin/users') User Admin
+                        li
+                            a(ui-sref='profile') Profile
+                        li
+                            a(href='', ng-click='signout()') Sign Out
     ul.nav.navbar-nav.navbar-right(ng-hide='identity.isAuthenticated()')
         li
             a(ui-sref='home') Home
