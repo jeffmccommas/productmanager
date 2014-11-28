@@ -16,6 +16,7 @@
                     td Code
                     td Available
                     td Price
+                    td  
             tbody
                 tr(ng-repeat='product in vm.products')
                     td
@@ -26,4 +27,10 @@
                     td {{ product.releaseDate | date }}
                     td {{ product.price | currency }}
                     td
-                        a.btnedit.btn.btn-primary(ui-sref='productEdit.info({id: product._id})') Edit
+                        a.btnedit.btn.btn-primary(ui-sref='productEdit.info({id: product._id})')
+                            i.fa.fa-pencil-square-o
+                            | Edit
+                    td
+                        a.btnedit.btn.btn-danger(ng-click='delete($index)')
+                            i.fa.fa-pencil-times
+                            | Delete
