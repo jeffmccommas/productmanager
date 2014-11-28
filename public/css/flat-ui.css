@@ -1212,6 +1212,7 @@ legend {
     line-height: inherit;
     color: inherit;
     border-bottom: none;
+    color: #ffffff;
 }
 textarea {
     padding: 5px 11px;
@@ -1225,6 +1226,7 @@ label {
     font-size: 15px;
     font-weight: normal;
     line-height: 2.4;
+    color: #ffffff;
 }
 .form-control::-moz-placeholder,
 .select2-search input[type="text"]::-moz-placeholder {

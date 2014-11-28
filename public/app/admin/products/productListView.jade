@@ -1,17 +1,17 @@
 //
    Created by jmccommas on 11/25/14.
-
-.panel.panel-primary
-    .panel-heading(style='font-size:large')
-        | Product
-        | List
-    .panel-body
-        table.table
+.prod-details
+    .page-header
+        h1 product listings
+.well
+    .table-responsive
+        table.table.table-striped.table-hover
             thead
                 tr
                     td
-                        button.btn.btn-primary(type='button', ng-click='vm.toggleImage()')
-                            | {{vm.showImage ? "Hide" : "Show"}} Image
+                        button.shoeimg.btn.btn-purchase(type='button', ng-click='vm.toggleImage()')
+                            | {{vm.showImage ?
+                            | "Hide" : "Show"}} Image
                     td Product
                     td Code
                     td Available
@@ -21,11 +21,9 @@
                     td
                         img(ng-if='vm.showImage', ng-src='{{product.imageUrl}}', style='width:50px;margin:2px', title='{{product.productName}}')
                     td
-                        a(ui-sref='productDetail({id: product._id})')
-                            | {{ product.productName}}
+                        a(ui-sref='productDetail({id: product._id})') {{ product.productName}}
                     td {{ product.productCode }}
                     td {{ product.releaseDate | date }}
                     td {{ product.price | currency }}
                     td
-                        a.btn.btn-primary(ui-sref='productEdit.info({id: product._id})')
-                            | Edit
+                        a.btnedit.btn.btn-primary(ui-sref='productEdit.info({id: product._id})') Edit
