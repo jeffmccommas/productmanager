@@ -208,7 +208,14 @@ i.fa.fa-credit-card {
     position: relative;
     left: -30px;
 }
-
+i.fa.fa-trash-o {
+    position: relative;
+    left: -10px;
+}
+i.fa.fa-pencil-square-o {
+    position: relative;
+    left: -8px;
+}
 /*edit products btn*/
 
 button.cancleBtn.btn.btn-danger {
@@ -216,7 +223,7 @@ button.cancleBtn.btn.btn-danger {
 }
 
 .btnedit.btn {
-    padding: 0px 15px;
+    padding: 2px 12px;
     font-size: 15px;
     font-weight: normal;
     line-height: 1.4;
