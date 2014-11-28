@@ -5,11 +5,11 @@
         .module("app")
         .controller("ProductEditCtrl", [
             "$state",
-            "productService", "httprequest", "$stateParams",
+            "productService", "httprequest", "$stateParams", "FileUploader",
             ProductEditCtrl]);
 
 
-    function ProductEditCtrl($state, productService, httprequest, $stateParams) {
+    function ProductEditCtrl($state, productService, httprequest, $stateParams, FileUploader) {
         var vm = this;
         var saveUrl = ($stateParams.id == "0" ? "/api/productcreate" : "/api/productupdate");
         var GetProductDetail = function () {
@@ -88,5 +88,6 @@
         vm.removeTag = function (idx) {
             vm.product.tags.splice(idx, 1);
         };
+        vm.uploader = new FileUploader();
     }
 }());

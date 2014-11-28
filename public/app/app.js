@@ -10,7 +10,8 @@
         'ngMessages',
         "ui.mask",
         "angularCharts",
-        "common.services"
+        "common.services",
+        "angularFileUpload"
     ]);
 
     angular.module('app').config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -36,11 +37,11 @@
                 controller: 'ProductListCtrl as vm'
             })
 
-            .state("signup", {
-                url: "/signup",
-                templateUrl: '/partials/account/signup',
-                controller: 'mvSignupCtrl'
-            })
+        .state("signup", {
+            url: "/signup",
+            templateUrl: '/partials/account/signup',
+            controller: 'mvSignupCtrl'
+        })
             .state("profile", {
                 url: "/profile",
                 templateUrl: '/partials/account/profile',
@@ -48,26 +49,26 @@
                 resolve: routeRoleChecks.user
             })
 
-            // productList start
+        // productList start
 
-            .state("productList", {
-                url: "/products",
-                templateUrl: '/partials/admin/products/productListView',
-                controller: 'ProductListCtrl as vm'
-            })
+        .state("productList", {
+            url: "/products",
+            templateUrl: '/partials/admin/products/productListView',
+            controller: 'ProductListCtrl as vm'
+        })
             .state("productDetail", {
                 url: "/products/:id",
                 templateUrl: '/partials/products/product-details',
                 controller: 'mvProductDetailCtrl'
             })
 
-            // productEdit start
+        // productEdit start
 
-            .state("productEdit", {
-                url: "/products/edit/:id",
-                templateUrl: "/partials/admin/products/productEditView",
-                controller: "ProductEditCtrl as vm"
-            })
+        .state("productEdit", {
+            url: "/products/edit/:id",
+            templateUrl: "/partials/admin/products/productEditView",
+            controller: "ProductEditCtrl as vm"
+        })
             .state("productEdit.info", {
                 url: "/info",
                 parent: 'productEdit',
@@ -81,36 +82,40 @@
                 url: "/tags",
                 templateUrl: "/partials/admin/products/productEditTagsView"
             })
+            .state("productEdit.image", {
+                url: "/image",
+                templateUrl: "/partials/admin/products/productEditImageView"
+            })
             .state("school-information", {
                 url: "/school-information",
                 templateUrl: '/partials/info/school-info'
             })
 
-            // cost analytics start
+        // cost analytics start
 
-            .state("cost-analysis", {
-                url: "/cost-analysis",
-                templateUrl: "/app/admin/prices/priceAnalyticsView.html",
-                controller: "PriceAnalyticsCtrl",
-                resolve: {
-                    productResource: "productResource",
+        .state("cost-analysis", {
+            url: "/cost-analysis",
+            templateUrl: "/app/admin/prices/priceAnalyticsView.html",
+            controller: "PriceAnalyticsCtrl",
+            resolve: {
+                productResource: "productResource",
 
-                    products: function (productResource) {
-                        return productResource.query(function (response) {
-                                // no code needed for success
-                            },
-                            function (response) {
-                                if (response.status == 404) {
-                                    alert("Error accessing resource: " +
+                products: function (productResource) {
+                    return productResource.query(function (response) {
+                            // no code needed for success
+                        },
+                        function (response) {
+                            if (response.status == 404) {
+                                alert("Error accessing resource: " +
                                     response.config.method + " " + response.config.url);
-                                } else {
-                                    alert(response.statusText);
-                                }
-                            }).$promise;
+                            } else {
+                                alert(response.statusText);
+                            }
+                        }).$promise;
 
-                    }
                 }
-            })
+            }
+        })
     }).run(function ($rootScope, $location, mvIdentity, $state) {
         $rootScope.$on('$stateChangeStart', function (event, next, toParams, current, fromParams) {
             var requireAutantication = ["/partials/admin/products/productListView"];
