@@ -151,8 +151,8 @@ html {
     min-height: 20px;
     padding: 19px;
     margin: 70px 0 20px 0;
-    background-color: #7f8c8d;
-    border: 1px solid #7f8c8d;
+    background-color: #ecf0f1;
+    border: 1px solid #d7e0e2;
     border-radius: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -210,6 +210,10 @@ i.fa.fa-credit-card {
 }
 
 /*edit products btn*/
+
+button.cancleBtn.btn.btn-danger {
+    padding: 8px 20px;
+}
 
 .btnedit.btn {
     padding: 0px 15px;
@@ -377,3 +381,21 @@ fieldset[disabled] .btn-freetrial.active {
     line-height: 40px !important;
 }
 
+.markuptext {
+    text-align: right;
+    color: #ffffff;
+}
+
+.mkColor {
+    color: #ffffff;
+}
+
+h1 small {
+    color: #C0C2C5 !important;
+    font-size: 17px;
+    margin-right: 10px;
+    font-style: italic;
+}
+.formEdit .tagsBtn button {
+    margin: 0 2px;
+}

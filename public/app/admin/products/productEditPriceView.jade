@@ -1,14 +1,14 @@
 //
    Created by jmccommas on 11/25/14.
 
-form.form-horizontal(name='productPriceForm', novalidate='')
+form.formEdit.form-horizontal(name='productPriceForm', novalidate='')
     fieldset
         legend Product Price Details
         .form-group(ng-class='{"has-error": productPriceForm.inputCost.$invalid &&\
     productPriceForm.inputCost.$dirty}')
             label.col-md-2.control-label(for='inputCost') Cost
             .col-md-4
-                input#inputCost.form-control(name='inputCost', type='number', placeholder='Our Cost', ng-model='vm.product.cost', style='text-align:right')
+                input.form-control(name='inputCost', type='number', placeholder='Our Cost', ng-model='vm.product.cost', style='text-align:right')
             span.help-block(ng-show='productPriceForm.inputCost.$invalid &&\
       productPriceForm.inputCost.$dirty')
                 | Product cost must be a valid number or empty.
@@ -23,7 +23,7 @@ form.form-horizontal(name='productPriceForm', novalidate='')
                 label.control-label(for='inputMarkupPercent') Markup Percentage
                 .form-group.row(style='margin-bottom:0;')
                     .col-md-4
-                        input#inputMarkupPercent.form-control(name='inputMarkupPercent', type='number', placeholder='Markup %', ng-model='vm.markupPercent', style='text-align:right')
+                        input.form-control(name='inputMarkupPercent', type='number', placeholder='Markup %', ng-model='vm.markupPercent', style='text-align:right')
                     .col-md-2
                         button.btn.btn-default(type='button', title='Calculate the price based on the code plus % markup', ng-click='vm.calculatePrice()')
                             | Calculate
@@ -36,7 +36,7 @@ form.form-horizontal(name='productPriceForm', novalidate='')
                 label.control-label(for='inputMarkupAmount') Markup Amount
                 .form-group.row(style='margin-bottom:0;')
                     .col-md-4
-                        input#inputMarkupAmount.form-control(name='inputMarkupAmount', type='number', placeholder='Markup $', ng-model='vm.markupAmount', style='text-align:right')
+                        input.form-control(name='inputMarkupAmount', type='number', placeholder='Markup $', ng-model='vm.markupAmount', style='text-align:right')
                     .col-md-2
                         button.btn.btn-default(type='button', title='Calculate the price based on the code plus a markup amount', ng-click='vm.calculatePrice()')
                             | Calculate
@@ -46,18 +46,18 @@ form.form-horizontal(name='productPriceForm', novalidate='')
         .form-group
             label.col-md-2.control-label(for='inputPrice') Price
             .col-md-4
-                input#inputPrice.form-control(name='inputPrice', type='number', placeholder='Price', required='', ng-model='vm.product.price', style='text-align:right')
+                input.form-control(name='inputPrice', type='number', placeholder='Price', required='', ng-model='vm.product.price', style='text-align:right')
             span.help-block(ng-show=' productPriceForm.inputPrice.$invalid && \
       productPriceForm.inputPrice.$dirty')
                 | Price must be a valid number.
-        .row
-            .col-md-2(style='text-align:right') Margin
+        .row.mkColor
+            .col-md-2.markuptext Margin
             .col-md-4 {{vm.marginPercent() | number:0}}%
         .form-group
             .col-md-4.col-md-offset-2
                 span
-                    button.btn.btn-primary(style='width:80px;margin-right:10px', type='submit', ng-disabled='productPriceForm.$invalid', ng-click='vm.submit(productPriceForm.$valid)')
+                    button.btn.btn-primary(style='margin-right:10px', type='submit', ng-disabled='productPriceForm.$invalid', ng-click='vm.submit(productPriceForm.$valid)')
                         | Save
                 span
-                    button.btn.btn-default(style='width:70px', ng-click='vm.cancel()')
+                    button.cancleBtn.btn.btn-danger(style='width:70px', ng-click='vm.cancel()')
                         | Cancel

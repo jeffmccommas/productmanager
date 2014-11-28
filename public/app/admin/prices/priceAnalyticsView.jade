@@ -2,9 +2,10 @@
    Created by jmccommas on 11/25/14.
 
 div.content
-    div.panel.panel-primary
-        div.panel-heading(style='font-size:large') {{title}}
-        div.panel-body
+    .prod-details
+        .page-header
+            h1 cost analytics
+    .well
             div.col-md-12
                 div.chart(ac-chart='"bar"', ac-data='dataAmount', ac-config='configAmount')
             div.col-md-12

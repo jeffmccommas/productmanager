@@ -34,5 +34,5 @@ form.formEdit.form-horizontal(name='productForm', novalidate='novalidate')
                     button.btn.btn-primary(style='margin-right: 10px;', ng-click='vm.submit(productForm.$valid)', data-ng-disabled='productForm.$invalid')
                         | Save
                 span
-                    button.btn.btn-default(ng-click='vm.cancel()')
+                    button.cancleBtn.btn.btn-danger(ng-click='vm.cancel()')
                         | Cancel

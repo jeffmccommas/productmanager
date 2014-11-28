@@ -1203,17 +1203,6 @@ fieldset[disabled] .btn-link:focus {
     margin: 0 1px;
     font-size: 16px;
 }
-form.formEdit legend {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 30px / 2;
-    font-size: 24px;
-    line-height: inherit;
-
-    border-bottom: none;
-    color: #ffffff;
-}
 legend {
     display: block;
     width: 100%;
@@ -1231,12 +1220,6 @@ textarea {
 }
 input[type="search"] {
     -webkit-appearance: none !important;
-}
-form.formEdit label {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 2.4;
-    color: #ffffff;
 }
 label {
     font-size: 15px;
