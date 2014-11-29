@@ -8,7 +8,7 @@ module.exports = function (config) {
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error...'));
     db.once('open', function callback() {
-        console.log('multivision db opened');
+        console.log('product manager db opened');
         userModel.createDefaultUsers();
         courseModel.createDefaultCourses();
         productsModel.createDefaultProducts();
