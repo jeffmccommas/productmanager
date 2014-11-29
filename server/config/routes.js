@@ -19,6 +19,7 @@ module.exports = function (app) {
     app.post('/api/productupdate', products.updateProduct);
     app.post('/api/productcreate', products.createProduct);
     app.delete('/api/product/:id', products.deleteProductsById);
+    app.post('/api/imageupload', products.uploadProductImage);
 
     app.get('/partials/*', function (req, res) {
         res.render('../../public/app/' + req.params[0]);
