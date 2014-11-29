@@ -191,18 +191,7 @@
                     "tags": ["carry bag", "bag", "school supplies"],
                     "imageUrl": "images/prods/school_bag.png"
                 });
-                Products.create({
-                    "productId": 13,
-                    "productName": "New Items",
-                    "productCode": "STB-6173",
-                    "releaseDate": "May 30, 2013",
-                    "description": "A good school bag or backpack is essential for any back to school, hiking or wilderness expeditions. Our range of rucksacks have all been carefully selected for their performance, durability and quality.",
-                    "cost": 13.00,
-                    "price": 29.99,
-                    "category": "electronics",
-                    "tags": ["carry bag", "bag", "school supplies"],
-                    "imageUrl": "images/prods/pocket_pc.png"
-                });
+                
             }
         })
 
