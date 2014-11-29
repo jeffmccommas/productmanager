@@ -201,7 +201,7 @@
                     "price": 29.99,
                     "category": "electronics",
                     "tags": ["carry bag", "bag", "school supplies"],
-                    "imageUrl": "images / prods / pocket_pc.png"
+                    "imageUrl": "images/prods/pocket_pc.png"
                 });
             }
         })
