@@ -191,7 +191,6 @@
                     "tags": ["carry bag", "bag", "school supplies"],
                     "imageUrl": "images/prods/school_bag.png"
                 });
-                
             }
         })
 
