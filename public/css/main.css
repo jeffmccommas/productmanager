@@ -390,11 +390,6 @@ fieldset[disabled] .btn-freetrial.active {
 
 .markuptext {
     text-align: right;
-    color: #ffffff;
-}
-
-.mkColor {
-    color: #ffffff;
 }
 
 h1 small {
@@ -404,7 +399,7 @@ h1 small {
     font-style: italic;
 }
 .formEdit .tagsBtn button {
-    margin: 0 2px;
+    margin: 20px 2px 0 2px;
 }
 
 .navbar-lg .navbar-nav > li > a {
