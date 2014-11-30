@@ -1,13 +1,10 @@
-/**
- * Created by Deb on 9/2/2014.
- */
 (function () {
     "use strict";
 
     angular
         .module("app")
         .factory("productService",
-            productService);
+        productService);
 
     function productService() {
         function calculateMarginPercent(price, cost) {
@@ -53,6 +50,5 @@
         }
 
     }
-
 
 }());
