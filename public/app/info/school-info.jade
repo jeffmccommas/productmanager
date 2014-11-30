@@ -1,23 +1,24 @@
 //
    Created by jmccommas on 11/26/14.
-.row.prod-details.school
-    .page-header
-        h1 school information &amp; directions
-    .col-lg-5
-        | <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11792.625862376513!2d-71.17909656667808!3d42.36050463876598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e378228cdfa6b7%3A0xe2bed939e38a6769!2sLiaison+International+Inc!5e0!3m2!1sen!2sus!4v1417041795596" width="400" height="350" frameborder="0" style="border:0"></iframe>
-    .col-lg-7
+div.row.prod-details.school
+    div.page-header
+        h1 school information & directions
+    div.col-lg-5
+        ui-gmap-google-map(center='map.center', zoom='map.zoom')
+    div.col-lg-7
         h1 university bookstore
         ul.list-unstyled
             li
                 span hours:
-                |  8am -6pm monday -friday
+                | 8am -6pm monday -friday
             li
                 span phone:
-                |  123-456-7890
+                | 123-456-7890
             li
                 span address:
-                |  311 Arsenal St, Watertown, MA 10293
+                | 311 Arsenal St, Watertown, MA 10293
         p
-            | Staying for a short visit? Parking in our lot is free for the first 30 minutes of your visit, no purchase required.
+            | Staying for a short visit? Parking in our lot is free for the first 30 minutes of your visit, no purchase
+            | required.
             | Staying for a while? Parking in our lot is free for up to 2 hours with a $4 minimum purchase.
             | For validation, see any University Book Store staff member.

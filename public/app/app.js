@@ -11,7 +11,9 @@
         "ui.mask",
         "angularCharts",
         "common.services",
-        "angularFileUpload"
+        "angularFileUpload",
+        "ui.utils",
+        "uiGmapgoogle-maps"
     ]);
 
     angular.module('app').config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -88,7 +90,8 @@
             })
             .state("school-information", {
                 url: "/school-information",
-                templateUrl: '/partials/info/school-info'
+                templateUrl: '/partials/info/school-info',
+                controller: 'mvSchoolInfo'
             })
 
         // cost analytics start
