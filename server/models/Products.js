@@ -194,5 +194,6 @@
             }
         })
     }
+    
     exports.createDefaultProducts = createDefaultProducts;
 }());
