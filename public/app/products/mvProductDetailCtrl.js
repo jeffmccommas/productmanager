@@ -1,4 +1,4 @@
-angular.module('app').controller('mvProductDetailCtrl', ["$scope", "$stateParams", "$http", "$modal", function ($scope, $stateParams, $http, $modal) {
+angular.module('app').controller('mvProductDetailCtrl', function ($scope, $stateParams, $http, $modal) {
     var GetProductDetail = function () {
         $http.get('/api/products/' + $stateParams.id).then(function (response) {
             $scope.product = response.data;
@@ -21,4 +21,4 @@ angular.module('app').controller('mvProductDetailCtrl', ["$scope", "$stateParams
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
-}]);
+});

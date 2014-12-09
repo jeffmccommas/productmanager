@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('app').controller('mvSignupCtrl', ["$scope", "mvUser", "mvNotifier", "$location", "mvAuth", "$state", function ($scope, mvUser, mvNotifier, $location, mvAuth, $state) {
+    angular.module('app').controller('mvSignupCtrl', function ($scope, mvUser, mvNotifier, $location, mvAuth, $state) {
 
         $scope.signup = function () {
             var newUserData = {
@@ -17,5 +17,5 @@
                 mvNotifier.error(reason);
             });
         }
-    }]);
+    });
 }());

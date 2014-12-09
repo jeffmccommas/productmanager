@@ -1,14 +1,17 @@
+/**
+ * Created by Deb on 9/4/2014.
+ */
 (function () {
     "use strict";
 
     angular
         .module("app")
         .controller("PriceAnalyticsCtrl",
-        ["$scope",
-            "$filter",
-            "products",
-            "productService",
-            PriceAnalyticsCtrl]);
+                    ["$scope",
+                     "$filter",
+                     "products",
+                     "productService",
+                     PriceAnalyticsCtrl]);
 
     function PriceAnalyticsCtrl($scope,$filter, products, productService){
         $scope.title="Price Analytics";
@@ -17,10 +20,10 @@
         for (var i = 0; i < products.length; i++) {
             products[i].marginPercent =
                 productService.calculateMarginPercent(products[i].price,
-                    products[i].cost);
+                                                        products[i].cost);
             products[i].marginAmount =
                 productService.calculateMarginAmount(products[i].price,
-                    products[i].cost);
+                                                        products[i].cost);
         }
         var orderedProductsAmount = $filter("orderBy")(products, "marginAmount");
         var filteredProductsAmount = $filter("limitTo")(orderedProductsAmount, 5);
@@ -84,4 +87,3 @@
 
     }
 }());
-

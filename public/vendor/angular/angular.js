@@ -4,8 +4,8 @@
  * License: MIT
  */
 (function(window, document, undefined) {'use strict';
+
 /**
- *
  * @description
  *
  * This object provides a utility for producing rich Error messages within
@@ -62,8 +62,8 @@ function minErr(module, ErrorConstructor) {
     }
     return new ErrorConstructor(message);
   };
-
 }
+
 /* We need to tell jshint what variables are being exported */
 /* global angular: true,
   msie: true,
