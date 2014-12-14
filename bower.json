@@ -28,6 +28,7 @@
     "angular-charts": "~0.2.6",
     "angular-file-upload": "~1.1.5",
     "angular-google-maps": "~2.0.11",
-    "angular-ui-utils": "~0.1.1"
+    "angular-ui-utils": "~0.1.1",
+    "angular-google-analytics": "~0.0.9"
   }
 }

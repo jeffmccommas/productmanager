@@ -193,7 +193,6 @@
                 });
             }
         })
-
     }
     exports.createDefaultProducts = createDefaultProducts;
 }());
